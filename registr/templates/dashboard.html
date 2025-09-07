@@ -11,8 +11,8 @@
     </div>
     <div class="dashboard-container">
         <h1>Xoş gəldiniz, {{ user.username }}!</h1>
+        <p>İstifadəçi: {{ user.username }} {{ user.surname }}</p>
         <p>Email: {{ user.email }}</p>
-        <p>Soyad: {{ user.surname }}</p>
         <p>Burada əlavə məlumatları göstərə bilərsiniz.</p>
 
         <form action="{{ url_for('logout') }}" method="get">

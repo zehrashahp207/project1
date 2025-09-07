@@ -1,37 +1,45 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="az">
 <head>
+    <meta charset="UTF-8">
     <title>Daxil ol</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="logo-container">
-        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Azərbaycan Əmək və Sosial Münasibətlər Akademiyası">
+
+    <div class="container">
+
+        <!-- Başlıq -->
+        <h2>Daxil ol</h2>
+
+        <!-- Flash mesajlar -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for msg in messages %}
+              <div class="flash-message flash-error">{{ msg }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <!-- Login formu -->
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Şifrə" required>
+
+            <label style="margin-bottom: 20px;">
+                <input type="checkbox" name="remember_password"> Şifrəni yadda saxla
+            </label>
+
+            <button type="submit">Daxil ol</button>
+        </form>
+
+        <!-- Alt linklər -->
+        <div class="link">
+            <p><a href="#" onclick="alert('Şifrəni sıfırlamaq funksiyası gələcəkdə aktiv olacaq!')">Şifrəmi unutdum?</a></p>
+            <p>Hesabınız yoxdur? <a href="{{ url_for('register') }}">Qeydiyyatdan keçin</a></p>
+        </div>
     </div>
-    <h1>Daxil ol</h1>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-          {% for msg in messages %}
-            <li>{{ msg }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-    <form method="POST">
-    <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Şifrə" required><br>
-     <label>
-            <input type="checkbox" name="remember_password"> Şifrəni yadda saxla
-        </label><br>
-    <button type="submit">Daxil ol</button>
-</form>
-
-<!-- Şifrəmi unutdum link kimi -->
-<p><a href="#" onclick="alert('Şifrəni sıfırlamaq funksiyası gələcəkdə aktiv olacaq!')">Şifrəmi unutdum?</a></p>
-
-<p>Hesabınız yoxdur? <a href="{{ url_for('register') }}">Qeydiyyatdan keçin</a></p>
 
 </body>
 </html>
