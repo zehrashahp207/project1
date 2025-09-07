@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daxil ol</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Azərbaycan Əmək və Sosial Münasibətlər Akademiyası">
+    </div>
+    <h1>Daxil ol</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Şifrə" required><br>
+     <label>
+            <input type="checkbox" name="remember_password"> Şifrəni yadda saxla
+        </label><br>
+    <button type="submit">Daxil ol</button>
+</form>
+
+<!-- Şifrəmi unutdum link kimi -->
+<p><a href="#" onclick="alert('Şifrəni sıfırlamaq funksiyası gələcəkdə aktiv olacaq!')">Şifrəmi unutdum?</a></p>
+
+<p>Hesabınız yoxdur? <a href="{{ url_for('register') }}">Qeydiyyatdan keçin</a></p>
+
+</body>
+</html>

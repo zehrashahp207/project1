@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Qeydiyyat</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Azərbaycan Əmək və Sosial Münasibətlər Akademiyası">
+    </div>
+    <h1>Qeydiyyat</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <input type="text" name="username" placeholder="Ad" required><br>
+        <input type="text" name="surname" placeholder="Soyad" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" id="password" name="password" placeholder="Şifrə" required><br>
+        <input type="password" id="confirm" name="confirm" placeholder="Şifrəni təkrar et" required><br>
+          <label>
+            <input type="checkbox" name="remember_password"> Şifrəni yadda saxla
+        </label><br>
+        <button type="submit">Qeydiyyatdan keç</button>
+    </form>
+    <p>Artıq hesabın varsa? <a href="{{ url_for('login') }}">Daxil ol</a></p>
+
+    <script>
+        function togglePassword() {
+            var x = document.getElementById("password");
+            x.type = x.type === "password" ? "text" : "password";
+        }
+        function toggleConfirm() {
+            var x = document.getElementById("confirm");
+            x.type = x.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #335AA2;
+    --primary-rgb: rgb(51, 90, 162);
+    --hover-color: #27477d; /* Düymə hover üçün tünd ton */
+}
+
+/* Ümumi body stili */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Loqo konteyneri */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Başlıqlar */
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Form konteyneri */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* Input sahələri */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Düymələr */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Flash mesajlar */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+    color: red;
+}
+
+/* Alt linklər və "Şifrəmi unutdum" */
+p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+p a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard konteyneri */
+.dashboard-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.dashboard-container p {
+    font-size: 16px;
+    color: #333;
+    margin: 8px 0;
+}
