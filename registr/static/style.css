@@ -187,10 +187,11 @@ button:focus {
 /* ===== Linklər ===== */
 .link {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 1.1rem;
     font-weight: 500;
-    padding: 6px 68px;
+    padding: 10px 10px;
+    
     
 }
 
