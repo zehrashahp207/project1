@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AƏSMA Ana Səhifə</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="main-header">
+    <!-- Üst sətr: Loqolar və adlar -->
+    <div class="top-bar">
+  <div class="left-title">
+    <img src="{{ url_for('static', filename='images/aesma-logo.png') }}" alt="AƏSMA Loqosu" class="logo" />
+    <span>Azərbaycan Əmək və Sosial Münasibətlər Akademiyası</span>
+  </div>
+  <div class="right-title">
+    <span>Azərbaycan Həmkarlar İttifaqları Konfederasiyası</span>
+    <img src="{{ url_for('static', filename='images/ahik-logo.png') }}" alt="AHİK Loqosu" class="logo" />
+  </div>
+</div>
+
+
+    <!-- Naviqasiya menyusu -->
+    <div class="nav-bar">
+      <div class="left-nav">
+        <a href="#" class="nav-button">Home</a>
+        <a href="#" class="nav-button">About</a>
+        <a href="#" class="nav-button">Contact</a>
+        <a href="#" class="nav-button">Landing</a>
+      </div>
+      <div class="right-nav">
+        <a href="#" class="nav-button secondary">Qeydiyyat</a>
+        <a href="#" class="nav-button secondary">Giriş</a>
+      </div>
+    </div>
+  </header>
+
+</body>
+</html>

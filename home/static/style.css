@@ -1,0 +1,89 @@
+/* Reset və baza ayarları */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Header */
+.main-header {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Yuxarı panel (adlar) */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  color: #2c3e50;
+}
+
+.left-title, .right-title {
+  font-size: 19px;
+  text-transform: capitalize;
+}
+
+/* Naviqasiya menyusu */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #03578f;
+}
+
+.left-nav, .right-nav {
+  display: flex;
+  gap: 16px;
+}
+
+/* Ümumi butonlar */
+.nav-button {
+  background-color: #ffffff;
+  color: #07304b;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #133166;
+  color: white;
+}
+
+/* Sağ tərəf butonları (Qeydiyyat və Giriş) */
+.nav-button.secondary {
+  background-color: #ffffff;
+  color: #07304b;
+  border: 2px solid #ffffff;
+}
+
+.nav-button.secondary:hover {
+  background-color: #ffffff;
+  color: #052f4d;
+  border: 1px solid #005fa3;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.left-title, .right-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
