@@ -37,7 +37,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  padding: 15px 30px;
   background-color: #03578f;
 }
 
@@ -76,7 +76,7 @@ body {
 }
 
 .logo {
-  height: 40px;
+  height: 60px;
   width: auto;
   margin-right: 10px;
   vertical-align: middle;
@@ -86,4 +86,22 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.main-header {
+  height: 17vh; /* yəni ekranın 17%-i */
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.hero-image {
+  height: 83vh; /* qalan 60%-i */
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
