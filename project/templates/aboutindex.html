@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AƏSMA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='aboutstyle.css') }}">
+</head>
+<body>
+
+    <div class="background-container">
+            <div class="navbar">
+                <div class="logo left-logo">
+                    <img src="https://aesma.edu.az/images/aesma-logo.png" alt="AƏSMA Loqosu" class="logo" />
+                </div>
+                <div class="aesma-title">
+                    Azərbaycan Əmək və Sosial Münasibətlər Akademiyası
+                </div>
+                <div class="logo right-logo">
+                    <img src="https://kendgidaish.az/assets/images/logoahk.png" alt="AHİK Loqosu" class="logo" />
+                </div>
+            </div>
+        <!-- Hero Image -->
+        <img
+            src="{{ url_for('static', filename='images/Esas.jpg') }}"
+            alt="Akademiya Hero"
+            class="hero-image"
+        />
+
+        <!-- Description -->
+        <div class="description">
+              Azərbaycan Əmək və Sosial Münasibətlər Akademiyası 2006‑cı ildə yaradılmışdır və müstəqil ali təhsil müəssisəsi kimi fəaliyyət göstərir.Azərbaycan Həmkarlar İttifaqları Konfederasiyasının təsis etdiyi özəl ali təhsil müəssisəsidir. Akademiyanın əsas məqsədi ölkənin əmək bazarı və sosial münasibətlər sahəsində peşəkar kadrlar hazırlamaqdır. Tələbələrin akademik biliklərlə yanaşı, praktiki bacarıqlarını da inkişaf etdirməsi üçün müxtəlif kurslar və könüllülük proqramları keçirilir. Bu təşəbbüslər tələbələrə real həyatda təcrübə qazanmaq, fərdi və peşəkar inkişafa nail olmaq, eləcə də cəmiyyətə faydalı olmaq imkanı verir. Belə proqramlar tələbələrin gələcək karyeralarına hazırlıq üçün mühüm bir element hesab olunur. Bu gün AƏSMA müasir əmək bazarının tələblərinə uyğun yüksək ixtisaslı kadrların hazırlanmasını həyata keçirir. Akademiyada iki fakültə – “Maliyyə-İqtisad” və “Sosial iş” fakültələri fəaliyyət göstərir. Akademiyada bir kitabxana, iki akt zalı və bir inkişaf mərkəzi mövcuddur.
+        </div>
+
+        <!-- Degree Section -->
+        <div class="degree-section">
+            <div class="degree-box">
+                <h2>Bakalavr</h2>
+                <ul>
+                   <li>Sosial iş</li>
+                    <li>Marketinq</li>
+                    <li>İqtisadiyyat</li>
+                    <li>Maliyyə</li>
+                    <li>Mühasibat</li>
+                    <li>Dövlət və Bələdiyyə</li>
+                </ul>
+            </div>
+            <div class="degree-box">
+                <h2>Magistr</h2>
+                <ul>
+                    <li>Maliyyə</li>
+                    <li>Sosial iş</li>
+                    <li>İqtisadiyyat</li>
+                    <li>Marketinq</li>
+                    <li>Mühasibat və audit</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Akt Zalı bölməsi -->
+        <div class="act-hall">
+            <h2>Böyük Akt Zalı</h2>
+            <div class="act-hall-section">
+                <img src="{{ url_for('static', filename='images/boyukzal2.jpg') }}" alt="boyuk akt zali"  />
+                <p>Akademiyanın əsas tədbirlərinin keçirildiyi böyük akt zalı, öz memarlıq və funksional xüsusiyyətlərinə görə müxtəlif formatlı tədbirlərin təşkilinə imkan yaradır. Təxminən 80 metr uzunluğunda və 30 metr enində olan bu zal, ümumilikdə 288 oturacaq yeri ilə tələbə və qonaqları qəbul etmək gücünə malikdir.Zalın daxili tərtibatı üç hissədən ibarətdir və bu da məkanın səmərəli istifadəsini təmin edir. Oturacaqlar 15 cərgədə yerləşdirilmişdir. İlk beş cərgə xüsusi olaraq fəxri qonaqlar və tədbirin əsas iştirakçıları üçün nəzərdə tutulmuşdur.Zalın sahəsi üç ayrı girişdən və bir səhnədən ibarətdir.</p>
+        </div>
+
+        <div class="act-hall">
+            <h2>Kiçik Akt Zalı</h2>
+            <div class="act-hall-section reverse">
+                <p>Akademiyanın kiçik akt zalı daha yığcam tədbirlər üçün nəzərdə tutulmuş bir məkandır. 10 metr enində və 30 metr uzunluğunda olan bu zal, daha səmərəli və məqsədyönlü görüşlərin keçirilməsinə imkan verir.Zal ümumilikdə 50 oturacaq yerinə malikdir və 10 cərgədən ibarətdir. Məkana giriş bir əsas qapı vasitəsilə təmin olunur.Kiçik akt zalı, əsasən seminar, mühazirə, təlim və kiçik konfranslar kimi tədbirlər üçün istifadə olunur.</p>
+                <img src="{{ url_for('static', filename='images/kicikzal.jpeg') }}" alt="kicik akt zali" />
+            </div>
+        </div>
+
+        <div class="act-hall">
+            <h2>Dairəvi Masa</h2>
+            <div class="act-hall-section">
+                <img src="{{ url_for('static', filename='images/dairevimasa2.jpg') }}" alt="dairevi masa" />
+                <p>Akademiyanın iclas zalı kiçik qrup görüşləri və məhsuldar müzakirələr üçün ideal bir məkandır. Bu zalın əsas özəlliyi mərkəzdə yerləşən dairəvi masasıdır, bu da iştirakçılar arasında səmərəli və bərabər ünsiyyət mühiti yaradır. Bütün iştirakçılar danışıqlara eyni dərəcədə qatılır və hər kəsin fikri rahatlıqla dinlənir. Zal əsasən idarə heyəti və fakültə iclasları, kiçik iştirakçı qrupları üçün seminarlar, təlim proqramları və tələbələrin müəllimlərlə interaktiv açıq dərsləri üçün istifadə edilir. Zalın bu funksional tərtibatı sayəsində hər bir tədbir maksimum fayda ilə başa çatır.
+                    </p>
+                </div>
+            </div>
+        <div class="act-hall">
+            <h2>Həmkarlar İttifaqının Zalı</h2>
+            <div class="act-hall-section reverse">
+                <img src="{{ url_for('static', filename='images/hemkarlar.webp') }}" alt="telim otagi" /> 
+                <p> Azərbaycan Əmək və Sosial Münasibətlər Akademiyasının tərkibindəki Azərbaycan Həmkarlar İttifaqları Konfederasiyasının (AHİK) Zalı, Konfederasiyanın mərkəzi fəaliyyətlərinə xidmət edən əhəmiyyətli bir məkandır. Burada əsasən AHİK təlimləri, müxtəlif müqavilələrin imzalanması, rəsmi görüşlər və əhəmiyyətli tədbirlər keçirilir. Zalın funksional və texniki təchizatı bu tədbirlərin yüksək səviyyədə təşkilinə imkan verir.</p>
+                
+            </div>
+        </div>
+
+        <!-- Image Gallery Slider -->
+        <div class="image-gallery">
+            <h2>Şəkil Qalereyası</h2>
+            <div class="slider-container">
+                <button class="slider-btn slider-prev">&#8592;</button>
+                <div class="slider-track" id="sliderTrack">
+                    <img src="{{ url_for('static', filename='images/aesmagiris.jpg') }}" alt="aesma" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/Men.jpg') }}" alt="Men" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/aesmafoe.jpg') }}" alt="foe" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/aesma2.jpeg') }}" alt="AESMA2" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/kitabxana.jpg') }}" alt="kitabxana" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/dairevimasa1.jpg') }}" alt="dairevimasa1" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/komputer.jpg') }}" alt="komputer" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/mezun1.jpeg') }}" alt="mezun" class="clickable-img"/>
+                    <img src="{{ url_for('static', filename='images/foto2.jpeg') }}" alt="foto2" class="clickable-img"/>
+                </div>
+                <button class="slider-btn slider-next">&#8594;</button>
+            </div>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('sliderTrack');
+    const sliderContainer = document.querySelector('.slider-container');
+    const slideAmount = 220;
+    let scrollAmount = 0;
+
+    function updateSlider(direction) {
+        const maxScroll = slider.scrollWidth - sliderContainer.clientWidth;
+
+        scrollAmount += direction * slideAmount;
+
+        // Sərhədləri yoxlayırıq
+        if (scrollAmount < 0) {
+            scrollAmount = 0;
+        } else if (scrollAmount > maxScroll) {
+            scrollAmount = maxScroll;
+        }
+
+        slider.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+
+    document.querySelector('.slider-prev').addEventListener('click', () => updateSlider(-1));
+    document.querySelector('.slider-next').addEventListener('click', () => updateSlider(1));
+});
+</script>
+</body>
+</html>

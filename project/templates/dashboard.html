@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Məlumat Səhifəsi</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylee.css') }}">
+</head>
+<body>
+    <div class="logo-container">
+    </div>
+    <div class="dashboard-container" >
+        <h1>Xoş gəldiniz, {{ user.username }}!</h1>
+        <p>İstifadəçi: {{ user.username }} {{ user.surname }}</p>
+        <p>Email: {{ user.email }}</p>
+
+        <form action="{{ url_for('logout') }}" method="get">
+            <button type="submit">Çıxış</button>
+        </form>
+    </div>
+</body>
+</html>
