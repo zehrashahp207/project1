@@ -16,5 +16,11 @@
         "surname": "Shahpelengova",
         "email": "zahra25@gmail.com",
         "password": "scrypt:32768:8:1$8gAADIq5BxpkS69C$29f96941c588af092de7ec933e40c9d0a5e7e35abeb1c1f730a1939b0dc5e2e16315efb0d92f1677de7548b01a7489a8d738c6fd434db5463a9ac554a7786961"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zzehra@gmail.com",
+        "password": "scrypt:32768:8:1$q6ya6PVHCkmCqDG4$9bc687cf870acf3d974c4f6dfa7bfcf94e71524c4b59bd1f87e58b20faeb18c831fb3e920ae92dd7f78eeb80430f61be29703cb5620f3291cb971ba9f16202c6"
     }
 ]
