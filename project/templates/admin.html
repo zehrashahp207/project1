@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <!-- CSS faylı -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Xoş gəlmisiniz, {{ user.username }} (Admin)</h1>
+        
+        <!-- Çıxış düyməsi -->
+        <p><a class="logout-btn" href="{{ url_for('logout') }}">Çıxış</a></p>
+
+        <h2>İstifadəçilər Siyahısı</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                <tr>
+                    <td>{{ u.username }}</td>
+                    <td>{{ u.surname }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.role }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
