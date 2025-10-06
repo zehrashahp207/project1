@@ -21,7 +21,6 @@ body {
   padding: 24px;
   box-sizing: border-box;
 }
-
 .card {
   background: var(--card);
   border-radius: 20px;
