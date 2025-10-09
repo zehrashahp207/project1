@@ -45,7 +45,7 @@ body {
 .right-title {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
 }
 
 .logo {
@@ -64,14 +64,14 @@ body {
   justify-content: space-between; /* bunu dəyişəcəyik */
   align-items: center;
   padding: 15px 0;
-  gap: 25px;
+  gap: 15px;
 }
 
 .nav-left {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 25px; /* düymələr arasındakı məsafə */
+  gap: 15px; /* düymələr arasındakı məsafə */
 }
 
 .nav-right {

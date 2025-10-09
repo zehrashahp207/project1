@@ -4,33 +4,45 @@
   box-sizing: border-box;
   font-family: Cambria, Georgia, serif;
 }
-
 body {
-  background-color: #ffffff;
-  color: #222;
-  line-height: 1.6;
+  background-color: #F4F4F4;
+  color: #333;
 }
-
-header {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding-bottom: 20px;
+/* Ortalanmış container (maksimum 1200px genişlik) */
+.container {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* HEADER bölməsi */
+.main-header {
+  position: relative;
+  z-index: 100;
+  height: 12vh; /* Başlıq üçün ekranın 12%-i */
+  background-color: #F9F9F9;
+  border-bottom: 100px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  flex-wrap: wrap;
+  padding: 8px 20px;
+  background-color: #fff;
+  color: #2C3E50;
+  border-bottom: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .left-title, .right-title {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: 18px;
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
@@ -41,7 +53,7 @@ header {
 }
 
 header p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   margin-top: 15px;
 }
@@ -93,11 +105,11 @@ h2 {
 .faculty h3, .hall h3 {
   color: #254A84;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .faculty p, .hall p {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -121,7 +133,7 @@ footer {
   color: white;
   text-align: center;
   padding: 10px 10px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* Responsive */
@@ -133,7 +145,7 @@ footer {
     margin: 20px 10px;
   }
   .faculty h3, .hall h3 {
-    font-size: 14px;
+    font-size: 18px;
   }
   .top-bar {
     flex-direction: column;
@@ -164,21 +176,23 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-size: 16px;
 }
 
 .footer-right {
   text-align: right;
   padding-right: 280px;
   margin-top: 20px;
+  font-size: 16px;
 }
 
 .footer-right p {
-  margin-top: 25px; /* Dəyəri istəyə görə dəyişə bilər */
+  margin-top: 25px;
 }
 
 .footer-bottom {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   border-top: 1px solid #ccc;
   padding-top: 15px;
 }
@@ -186,4 +200,5 @@ footer {
 .contact-title {
   text-align: center;
   margin-bottom: 10px;
+  font-size: 18px;
 }
