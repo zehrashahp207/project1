@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasiyalar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bütün Rezervasiyalar</h1>
+        <p><a class="back-btn" href="{{ url_for('admin') }}">⬅ Admin Dashboard</a></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Email</th>
+                    <th>Tarix</th>
+                    <th>Başlanğıc Vaxtı</th>
+                    <th>Bitmə Vaxtı</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in reservations %}
+                <tr>
+                    <td>{{ r.name }}</td>
+                    <td>{{ r.email }}</td>
+                    <td>{{ r.date }}</td>
+                    <td>{{ r.start_time }}</td>
+                    <td>{{ r.end_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

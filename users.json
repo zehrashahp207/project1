@@ -1,0 +1,61 @@
+[
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zehra@gmail.com",
+        "password": "scrypt:32768:8:1$ftAZuP4tKkjstfuW$092bfc302a16dcc9b469cc64589087fabcc934b677ef11e9f078dee4446bfe12eb53bd6feec86796e164d824b99833a0e1a2485ec6b823e4a58e24f715777aca"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zahra01@gmail.com",
+        "password": "scrypt:32768:8:1$g6ecW4lw60K6RYRM$4d5f54888ef999d76afc34c3684837298e1871b66b5d8d69f64c820daa0dba8a4cac0a67ba54399c8d6762b8d4b3ff726ca67d7282e91ba2644f87240936cb88"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zahra25@gmail.com",
+        "password": "scrypt:32768:8:1$8gAADIq5BxpkS69C$29f96941c588af092de7ec933e40c9d0a5e7e35abeb1c1f730a1939b0dc5e2e16315efb0d92f1677de7548b01a7489a8d738c6fd434db5463a9ac554a7786961"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zzehra@gmail.com",
+        "password": "scrypt:32768:8:1$q6ya6PVHCkmCqDG4$9bc687cf870acf3d974c4f6dfa7bfcf94e71524c4b59bd1f87e58b20faeb18c831fb3e920ae92dd7f78eeb80430f61be29703cb5620f3291cb971ba9f16202c6"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "dhycgdgdjhcgjgb@gmail.com",
+        "password": "scrypt:32768:8:1$wjEaFvLSZsfjRKO4$2fdaabd9c419f6388dc42b7369ce65961f8064ddbc4011ae761f95ad7a9a175608d5c88438e7bbeb8a1275002beb8704e2df305d3c22336a3bf2ee5bb0ded6a9",
+        "role": "user"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zehra11@gmail.com",
+        "password": "scrypt:32768:8:1$O4eOKj5Gheftw9sN$523fee46b04262fc5cc52590f1e3bc236ecc2e9cff9d89a583915d4eadf659527046ce5289537b176c4d80e3e7f58a0121dce340b09f87d4a2447db6e5072306",
+        "role": "user"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zehra0@gmail.com",
+        "password": "scrypt:32768:8:1$HRZhzVlUzIZ8zEt4$1a6b68c2bb159b4c940e02e4b967094bf25ec5f2de5c98aa295efc363aa7d69a2604b0356dbe7f1543cd854fc04fd9573c9e2868ed59ae493076cb70ce574638",
+        "role": "user"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zehra12@gmail.com",
+        "password": "scrypt:32768:8:1$dS19ZXif2rEBsu4Y$49304a0f883d1347f4a03e920f28205b4252a5c2ff4a5822a5628fbc2961803ac720bdf2448c5e84e313bade7376eb6a9e5867cd1155fbe120ad40669b0ccda6",
+        "role": "user"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zehra00@gmail.com",
+        "password": "scrypt:32768:8:1$DZoudQoTBxrTcDOh$dce55f1603c5699f92ccb9b4b7e9b6e4b2a7166ba39cc279afa4d0ce56bfc2ee925ec1a1bb882e42bec3dc0a797b40415415aeb8e1e21849de43590e8ec2d546",
+        "role": "user"
+    }
+]

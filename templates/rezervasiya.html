@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<title>Rezervasiya</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='rezervasiya.css') }}">
+</head>
+<body>
+<h1>Rezervasiya Formu</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flash-messages">
+      {% for msg in messages %}
+        <li>{{ msg }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form method="POST" action="{{ url_for('rezerv.reserve') }}">
+        <label for="hall">Salon seçin:</label>
+        <select name="hall" id="hall" required>
+            <option value="">--Salon seçin--</option>
+            <option value="A Zal">A Zal</option>
+            <option value="B Zal">B Zal</option>
+            <option value="C Zal">C Zal</option>
+        </select>
+
+    <label for="name">Adınız:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="date">Tarix:</label>
+    <input type="date" id="date" name="date" required><br><br>
+
+    <label for="start_time">Başlama vaxtı:</label>
+    <input type="time" id="start_time" name="start_time" required><br><br>
+
+    <label for="zal">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="end_time">Bitmə vaxtı:</label>
+    <input type="time" id="end_time" name="end_time" required><br><br>
+
+    <button type="submit">Rezervasiya et</button>
+</form>
+
+</body>
+</html>
