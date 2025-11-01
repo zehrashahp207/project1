@@ -15,7 +15,7 @@
         }
         
         .background-container {
-            background: rgba(255, 255, 255, 0.15);
+            background: #ffffff26;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-radius: 20px;
@@ -52,6 +52,26 @@
             height: 100px;
             display: block;
         }
+        
+.back-button {
+    position: absolute;
+    top: 100px;   
+    left: 30px;  
+    padding: 15px 24px;
+    background-color: #335AA2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
         
         .aesma-title {
             font-size: 2.2rem;

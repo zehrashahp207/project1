@@ -18,32 +18,42 @@
   {% endif %}
 {% endwith %}
 
-<form method="POST" action="{{ url_for('rezerv.reserve') }}">
-        <label for="hall">Salon seçin:</label>
-        <select name="hall" id="hall" required>
-            <option value="">--Salon seçin--</option>
-            <option value="A Zal">A Zal</option>
-            <option value="B Zal">B Zal</option>
-            <option value="C Zal">C Zal</option>
-        </select>
+<button class="back-button" onclick="history.back()">Geri qayıt</button>
+<form method="POST" action="{{ url_for('rezerv.reserve') }}" class="rezerv-form">
+    <label for="hall">Salon seçin:</label>
+    <select name="hall" id="hall" required>
+        <option value="">--Salon seçin--</option>
+        <option value="Böyük zal">Böyük zal</option>
+        <option value="Kiçik zal">Kiçik zal</option>
+        <option value="Dəyirmi masa">Dəyirmimasa</option>
+        <option value="digər">digər</option>
+    </select>
 
-    <label for="name">Adınız:</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="organization">Təşkilat:</label>
+    <select name="organization" id="organization" required>
+        <option value="">--Təşkilat seçin--</option>
+        <option value="İqtisadiyyat">TGT</option>
+        <option value="Mühəndislik">AHİK</option>
+        <option value="Təbiət elmləri">Tədbirlər</option>
+        <option value="Digər">Digər</option>
+    </select>
+
+    <label for="name">Ad və Soyad:</label>
+    <input type="text" name="name" id="name" required>
 
     <label for="date">Tarix:</label>
-    <input type="date" id="date" name="date" required><br><br>
+    <input type="date" name="date" id="date" required>
 
     <label for="start_time">Başlama vaxtı:</label>
-    <input type="time" id="start_time" name="start_time" required><br><br>
-
-    <label for="zal">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="time" name="start_time" id="start_time" required>
 
     <label for="end_time">Bitmə vaxtı:</label>
-    <input type="time" id="end_time" name="end_time" required><br><br>
+    <input type="time" name="end_time" id="end_time" required>
 
     <button type="submit">Rezervasiya et</button>
-</form>
 
+    <a href="{{ url_for('rezerv.my_reservations') }}" class="view-my-rezervs">Rezervasiyalarımı gör</a>
+</form>
+<hr>
 </body>
 </html>

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="az">
 <head>
-    <title>Məlumat Səhifəsi</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylee.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
 </head>
 <body>
-    <div class="logo-container">
-    </div>
     <div class="dashboard-container" >
         <h1>Xoş gəldiniz, {{ user.username }}!</h1>
         <p>İstifadəçi: {{ user.username }} {{ user.surname }}</p>
         <p>Email: {{ user.email }}</p>
 
-        <form action="{{ url_for('logout') }}" method="get">
+        <div class="buttons">
+            <a href="{{ url_for('home') }}" class="btn">Home səhifəsinə qayıt</a>
+            <a href="{{ url_for('rezerv.reserve') }}" class="btn">Rezervasiya et</a>
+        </div>
+
+        <form action="{{ url_for('logout') }}">
             <button type="submit">Çıxış</button>
         </form>
     </div>

@@ -1,3 +1,6 @@
+/* ==========================
+   ÜMUMİ DİZAYN
+========================== */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #7095d6, #ffffff);
@@ -7,19 +10,22 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    width: 90%;
+    max-width: 1000px;
     margin: 50px auto;
     background: #fff;
     padding: 30px 40px;
     border-radius: 20px;
-    box-shadow: 0 14px 28px rgba(69, 136, 245, 0.3),
-                0 30px 60px rgba(49, 99, 207, 0.2);
+    box-shadow: 0 14px 28px rgba(69, 136, 245, 0.25),
+                0 30px 60px rgba(49, 99, 207, 0.15);
+    box-sizing: border-box;
 }
 
+/* Başlıqlar */
 h1 {
-    color: #2c4d9e;
+    color: #1e3a8a;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 h2 {
@@ -29,6 +35,9 @@ h2 {
     margin-top: 30px;
 }
 
+/* ==========================
+   CƏDVƏL STİLİ
+========================== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -37,7 +46,7 @@ table {
 
 th, td {
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #e5e7eb;
     text-align: left;
 }
 
@@ -48,13 +57,16 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #f0f4ff;
+    background-color: #f8fafc;
 }
 
 tr:hover {
     background-color: #e6f0ff;
 }
 
+/* ==========================
+   KEÇİDLƏR
+========================== */
 a {
     color: #2563eb;
     text-decoration: none;
@@ -66,32 +78,118 @@ a:hover {
     text-decoration: underline;
 }
 
+/* ==========================
+   ÜST PANEL — DÜYMƏLƏR
+========================== */
+.header-buttons {
+    display: flex;
+    justify-content: space-between; /* biri solda, biri sağda */
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Çıxış düyməsi */
 .logout-btn {
-    display: inline-block;
-    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(239, 68, 68, 0.3);
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(239, 68, 68, 0.5);
+}
+
+/* Rezervasiyaları yoxla düyməsi */
+.check-reservations-btn {
     background: linear-gradient(135deg, #3b82f6, #2563eb);
     color: #fff;
     padding: 12px 25px;
     border-radius: 25px;
-    text-align: center;
     font-weight: 700;
     transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
 }
 
-.logout-btn:hover {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
+.check-reservations-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
     transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.6),
-                0 6px 12px rgba(14, 60, 200, 0.45);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.5);
 }
 
-/* Mobil uyğunluq */
+/* ==========================
+   STATUS ETİKETLƏRİ
+========================== */
+tr.deleted {
+    background-color: #ffe6e6 !important;
+    color: #b91c1c;
+    text-decoration: line-through;
+    opacity: 0.85;
+}
+
+.deleted-label {
+    background: #dc2626;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.active-label {
+    background: #16a34a;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Adminə qayıt düyməsi */
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   MOBİL DİZAYN
+========================== */
 @media (max-width: 480px) {
     .container {
         padding: 20px;
     }
+
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
     th, td {
-        padding: 8px 10px;
-        font-size: 0.9rem;
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .back-btn {
+        width: 100%;
+        text-align: center;
     }
 }

@@ -1,0 +1,89 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #7095d6, #ffffff);
+    color: #111d3b;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #1d2a57;
+}
+
+.rezerv-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+input, select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button, .btn-secondary, .btn-delete {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #1d2a57;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #5f80c0;
+    color: white;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
+.rezerv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.rezerv-table th, .rezerv-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.rezerv-table th {
+    background-color: #5f80c0;
+    color: white;
+}
+
+.no-rezerv {
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+}

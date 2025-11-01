@@ -57,5 +57,19 @@
         "email": "zehra00@gmail.com",
         "password": "scrypt:32768:8:1$DZoudQoTBxrTcDOh$dce55f1603c5699f92ccb9b4b7e9b6e4b2a7166ba39cc279afa4d0ce56bfc2ee925ec1a1bb882e42bec3dc0a797b40415415aeb8e1e21849de43590e8ec2d546",
         "role": "user"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zehra207@gmail.com",
+        "password": "scrypt:32768:8:1$dywAEKRlKuk3daFP$c583472636a88f9a7cfd7ae416788b06cff889b8ee8d9d215ef386198ada6d1362a3dbbcdba4b11cae7c75ffc5386f1292a0ca69be065f391e33f939cdadd006",
+        "role": "user"
+    },
+    {
+        "username": "Zehra",
+        "surname": "Shahpelengova",
+        "email": "zehra2007@gmail.com",
+        "password": "scrypt:32768:8:1$kk8ArmngcOhmxUod$b73ee6e99edf9505af6e8b92ad304ac9b57755f12a8fda45759b1b4f2795abe16fb993113e3b1d066a395ec5a9be9e37ae2bae5e19a2d43daf66457a32950b11",
+        "role": "user"
     }
 ]

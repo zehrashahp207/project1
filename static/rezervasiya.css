@@ -1,98 +1,136 @@
+/* Ümumi ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Georgia, serif;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #7095d6, #ffffff);
-    color: #111d3b;
-    margin: 0;
-    padding: 20px;
+  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #7095d6, #ffffff);
+  color: #333;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 14px 28px rgba(69, 136, 245, 0.3),
-                0 30px 60px rgba(49, 99, 207, 0.2);
+/* Başlıq */
+h1 {
+  color: #254A84;
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-align: center;
 }
 
-h1, h2 {
-    color: #2c4d9e;
-    text-align: center;
+/* Form stili */
+form {
+  background-color: #fff;
+  padding: 30px 50px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  max-width: 580px;
+  width: 100%;
+  text-align: left;
 }
 
-h2 {
-    border-bottom: 2px solid #3b82f6;
-    padding-bottom: 5px;
-    margin-top: 30px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
+/* Label-lar */
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #335AA2;
 }
 
-input[type="datetime-local"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
+/* Input və select-lər */
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.reserve-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+input:focus, select:focus {
+  border-color: #335AA2;
 }
 
-.reserve-btn:hover {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.6),
-                0 6px 12px rgba(14, 60, 200, 0.45);
+/* Boşluqlar */
+form br {
+  display: none;
 }
 
-.reservation-list {
-    list-style: none;
-    padding: 0;
+form > *:not(:last-child) {
+  margin-bottom: 18px;
 }
 
-.reservation-list li {
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #f0f4ff;
-    border-radius: 8px;
+/* Düymə */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: #335AA2;
+  color: #fff;
+  font-size: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+button[type="submit"]:hover {
+  background-color: #254A84;
 }
 
-.btn {
-    text-decoration: none;
-    padding: 12px 20px;
-    background: #3b82f6;
-    color: #fff;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-align: center;
+/* Flash mesajları */
+.flash-messages {
+  list-style: none;
+  margin-bottom: 20px;
+  color: #d9534f;
+  font-weight: bold;
+  text-align: center;
 }
 
-.btn:hover {
-    background: #1e40af;
+/* Geri qayıt düyməsi */
+.back-button {
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  padding: 12px 22px;
+  background-color: #335AA2;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #254A84;
+}
+
+/* Mobil uyğunluq */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  button[type="submit"] {
+    font-size: 18px;
+  }
 }

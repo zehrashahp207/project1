@@ -70,7 +70,7 @@ def register():
 
         session["user"] = email
         session["role"] = role
-        flash(f"Qeydiyyat uğurla tamamlandı! Rolunuz: {role}")
+        flash(f"Qeydiyyat uğurla tamamlandı! Xoş gəldiniz, {username}!")
 
         # ✅ Qeydiyyatdan sonra dashboard-a yönləndiririk
         return redirect(url_for("dashboard"))
@@ -99,28 +99,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
-# Rezervasiya səhifəsi
-@app.route("/rezervasiya", methods=["GET", "POST"])
-def reserve():
-    if "user" not in session:
-        flash("Zəhmət olmasa əvvəlcə daxil olun.")
-        return redirect(url_for("login"))
-
-    if request.method == "POST":
-        user_email = session["user"]  # istifadəçi email
-        hall = request.form["hall"]
-        start = request.form["start"]
-        end = request.form["end"]
-
-        # Burada overlaping yoxlaması və rezervasiyanı əlavə et
-
-        flash("Rezervasiya uğurla tamamlandı!")
-        return redirect(url_for("rezerv.reserve"))
-
-    # GET request üçün mövcud rezervasiyaları göstər
-    reservations = load_reservations()  # nümunə funksiya
-    return render_template("rezervasiya.html", reservations=reservations)
 
 
 @app.route("/dashboard")
@@ -161,7 +139,15 @@ def view_reservations():
         return redirect(url_for("login"))
 
     reservations = load_reservations()
-    return render_template("admin_reservations.html", reservations=reservations)
+    active_reservations = [r for r in reservations if r.get("status") == "active"]
+    deleted_reservations = [r for r in reservations if r.get("status") == "deleted"]
+
+    return render_template(
+        "admin_reservations.html",
+        active_reservations=active_reservations,
+        deleted_reservations=deleted_reservations
+    )
+
 
 
 # Çıxış

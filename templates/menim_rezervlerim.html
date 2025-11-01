@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Mənim rezervlərim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='rezervlerim.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Mənim Rezervasiyalarım</h2>
+
+        {% if reservations %}
+        <table class="rezerv-table">
+            <tr>
+                <th>Zal</th>
+                <th>Təşkilat</th>
+                <th>Tarix</th>
+                <th>Vaxt</th>
+                <th>Əməliyyat</th>
+            </tr>
+            {% for r in reservations %}
+            <tr>
+                <td>{{ r.hall }}</td>
+                <td>{{ r.organization }}</td>
+                <td>{{ r.date }}</td>
+                <td>{{ r.start_time }} - {{ r.end_time }}</td>
+                <td>
+                    <form action="{{ url_for('rezerv.delete_reservation', index=loop.index0) }}" method="POST">
+                        <button type="submit" class="btn-delete">Sil</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="no-rezerv">Hazırda heç bir rezervasiyanız yoxdur.</p>
+        {% endif %}
+
+        <a href="{{ url_for('rezerv.reserve') }}" class="btn-secondary">Geri qayıt</a>
+    </div>
+</body>
+</html>

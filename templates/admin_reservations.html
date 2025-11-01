@@ -2,36 +2,77 @@
 <html lang="az">
 <head>
     <meta charset="UTF-8">
-    <title>Rezervasiyalar</title>
+    <title>Admin Panel - Rezervasiyalar</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Bütün Rezervasiyalar</h1>
-        <p><a class="back-btn" href="{{ url_for('admin') }}">⬅ Admin Dashboard</a></p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Ad</th>
-                    <th>Email</th>
-                    <th>Tarix</th>
-                    <th>Başlanğıc Vaxtı</th>
-                    <th>Bitmə Vaxtı</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for r in reservations %}
-                <tr>
-                    <td>{{ r.name }}</td>
-                    <td>{{ r.email }}</td>
-                    <td>{{ r.date }}</td>
-                    <td>{{ r.start_time }}</td>
-                    <td>{{ r.end_time }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+<div class="container">
+    <div class="header-buttons">
+        <a href="{{ url_for('admin') }}" class="logout-btn">⬅ Admin səhifəsi</a>
+        <a href="{{ url_for('logout') }}" class="check-reservations-btn">Çıxış</a>
     </div>
+
+    <h1>Aktiv Rezervasiyalar</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Təşkilat</th>
+                <th>Ad</th>
+                <th>Zal</th>
+                <th>Email</th>
+                <th>Tarix</th>
+                <th>Başlanğıc</th>
+                <th>Bitmə</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in active_reservations %}
+            <tr>
+                <td>{{ r.organization }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.hall }}</td>
+                <td>{{ r.email }}</td>
+                <td>{{ r.date }}</td>
+                <td>{{ r.start_time }}</td>
+                <td>{{ r.end_time }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="7" style="text-align:center;">Aktiv rezerv yoxdur.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Silinmiş Rezervasiyalar</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Təşkilat</th>
+                <th>Ad</th>
+                <th>Zal</th>
+                <th>Email</th>
+                <th>Tarix</th>
+                <th>Başlanğıc</th>
+                <th>Bitmə</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in deleted_reservations %}
+            <tr style="background-color:#ffe5e5;">
+                <td>{{ r.organization }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.hall }}</td>
+                <td>{{ r.email }}</td>
+                <td>{{ r.date }}</td>
+                <td>{{ r.start_time }}</td>
+                <td>{{ r.end_time }}</td>
+                <td><strong>Silinmiş rezerv</strong></td>
+            </tr>
+            {% else %}
+            <tr><td colspan="8" style="text-align:center;">Silinmiş rezerv yoxdur.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
