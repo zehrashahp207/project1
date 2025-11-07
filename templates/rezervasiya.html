@@ -19,24 +19,28 @@
 {% endwith %}
 
 <button class="back-button" onclick="history.back()">Geri qayıt</button>
+
 <form method="POST" action="{{ url_for('rezerv.reserve') }}" class="rezerv-form">
     <label for="hall">Salon seçin:</label>
     <select name="hall" id="hall" required>
-        <option value="">--Salon seçin--</option>
-        <option value="Böyük zal">Böyük zal</option>
-        <option value="Kiçik zal">Kiçik zal</option>
-        <option value="Dəyirmi masa">Dəyirmimasa</option>
-        <option value="digər">digər</option>
+      <option value="" disabled selected hidden>--Salon seçin--</option>
+      <option value="Böyük akt zalı">Böyük akt zalı</option>
+      <option value="Kiçik akt zalı">Kiçik akt zalı</option>
+      <option value="AHİK Konfrans zalı">AHİK Konfrans zalı</option>
+      <option value="Dəyirmi masa">Dəyirmi masa</option>
+      <option value="Digər">Digər</option>
     </select>
 
     <label for="organization">Təşkilat:</label>
     <select name="organization" id="organization" required>
-        <option value="">--Təşkilat seçin--</option>
-        <option value="İqtisadiyyat">TGT</option>
-        <option value="Mühəndislik">AHİK</option>
-        <option value="Təbiət elmləri">Tədbirlər</option>
-        <option value="Digər">Digər</option>
+      <option value="" disabled selected hidden>--Təşkilat seçin--</option>
+      <option value="AHİK">AHİK</option>
+      <option value="YAP">YAP</option>
+      <option value="TGT">TGT</option>
+      <option value="Əlamətdar günlər və bayramlar">Əlamətdar günlər və bayramlar</option>
+      <option value="Digər">Digər</option>
     </select>
+
 
     <label for="name">Ad və Soyad:</label>
     <input type="text" name="name" id="name" required>

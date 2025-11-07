@@ -150,6 +150,7 @@ def view_reservations():
 
 
 
+
 # Çıxış
 @app.route("/logout")
 def logout():

@@ -1,9 +1,13 @@
 body {
+    display: flex;             /* Flex konteyner aktivləşdirildi */
+    justify-content: center;   /* üfiqi mərkəz */
+    align-items: center;       /* şaquli mərkəz */
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #7095d6, #ffffff);
     color: #111d3b;
     margin: 0;
     padding: 20px;
+    height: 100vh;   
 }
 
 .container {
