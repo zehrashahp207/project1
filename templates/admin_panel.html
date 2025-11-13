@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        h2 { color: #333; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #eee; }
+        form { display: inline; }
+        .approve { color: green; font-weight: bold; }
+        .reject { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+
+    <h2>Gözləyən rezervasiyalar</h2>
+    {% if pending %}
+    <table>
+        <tr>
+            <th>#</th><th>İstifadəçi</th><th>Zal</th><th>Tarix</th><th>Başlanğıc</th><th>Bitiş</th><th>Əməliyyat</th>
+        </tr>
+        {% for r in pending %}
+        <tr>
+            <td>{{ loop.index0 }}</td>
+            <td>{{ r.user }}</td>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.date }}</td>
+            <td>{{ r.start_time }}</td>
+            <td>{{ r.end_time }}</td>
+            <td>
+                <form action="{{ url_for('admin_bp.approve_reservation', index=loop.index0) }}" method="POST">
+                    <button class="approve">✅ Qəbul et</button>
+                </form>
+                <form action="{{ url_for('admin_bp.reject_reservation', index=loop.index0) }}" method="POST">
+                    <button class="reject">❌ Rədd et</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Hazırda gözləyən rezerv yoxdur.</p>
+    {% endif %}
+
+    <h2>Təsdiqlənmiş rezervasiyalar</h2>
+    {% if approved %}
+    <table>
+        <tr>
+            <th>#</th><th>Zal</th><th>İstifadəçi</th><th>Tarix</th><th>Vaxt</th>
+        </tr>
+        {% for r in approved %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.user }}</td>
+            <td>{{ r.date }}</td>
+            <td>{{ r.start_time }} - {{ r.end_time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Təsdiqlənmiş rezerv yoxdur.</p>
+    {% endif %}
+
+    <h2>Rədd edilmiş rezervasiyalar</h2>
+    {% if rejected %}
+    <table>
+        <tr>
+            <th>#</th><th>Zal</th><th>İstifadəçi</th><th>Tarix</th><th>Vaxt</th>
+        </tr>
+        {% for r in rejected %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.user }}</td>
+            <td>{{ r.date }}</td>
+            <td>{{ r.start_time }} - {{ r.end_time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Rədd edilmiş rezerv yoxdur.</p>
+    {% endif %}
+</body>
+</html>

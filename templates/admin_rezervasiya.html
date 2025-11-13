@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Rezervasiyalar</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fafafa; margin: 40px; }
+        h1, h2 { color: #333; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 40px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background: #eee; }
+        .btn { padding: 6px 12px; border: none; cursor: pointer; border-radius: 4px; }
+        .approve { background: #4CAF50; color: white; margin-right: 5px; }
+        .delete { background: #f44336; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .status-active { color: green; font-weight: bold; }
+        .status-pending { color: orange; font-weight: bold; }
+        .status-deleted { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Admin Rezervasiyalar Paneli</h1>
+    <!-- Gözləmədə olan rezervasiyalar -->
+    <h2>Gözləmədə olan rezervasiyalar</h2>
+    {% if pending_reservations %}
+    <table>
+        <tr>
+            <th>Zal</th>
+            <th>Təşkilat</th>
+            <th>Ad</th>
+            <th>Email</th>
+            <th>Tarix</th>
+            <th>Vaxt</th>
+            <th>Əməliyyat</th>
+        </tr>
+        {% for r in pending_reservations %}
+        <tr>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.organization }}</td>
+            <td>{{ r.name }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.date }}</td>
+            <td>{{ r.start_time }} - {{ r.end_time }}</td>
+            <td>
+                <form action="{{ url_for('approve_reservation', res_id=r.id) }}" method="POST">
+                    <input type="hidden" name="hall" value="{{ r.hall }}">
+                    <input type="hidden" name="organization" value="{{ r.organization }}">
+                    <input type="hidden" name="email" value="{{ r.email }}">
+                    <input type="hidden" name="date" value="{{ r.date }}">
+                    <button type="submit" type="submit"><span style="color:green; font-weight:bold;">Qəbul et ✅</span></button>
+                </form>
+
+                <form action="{{ url_for('delete_reservation', res_id=r.id) }}" method="POST">
+                    <input type="hidden" name="hall" value="{{ r.hall }}">
+                    <input type="hidden" name="organization" value="{{ r.organization }}">
+                    <input type="hidden" name="email" value="{{ r.email }}">
+                    <input type="hidden" name="date" value="{{ r.date }}">
+                    <button type="submit" type="submit"><span style="color:red; font-weight:bold;">Ləğv et ❌</span></button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Hazırda gözləmədə rezerv yoxdur.</p>
+    {% endif %}
+
+    <!-- Qəbul edilmiş rezervasiyalar -->
+    <h2>Qəbul edilmiş rezervasiyalar</h2>
+    {% if active_reservations %}
+    <table>
+        <tr>
+            <th>Zal</th>
+            <th>Təşkilat</th>
+            <th>Ad</th>
+            <th>Email</th>
+            <th>Tarix</th>
+            <th>Vaxt</th>
+            <th>Status</th>
+        </tr>
+        {% for r in active_reservations %}
+        <tr>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.organization }}</td>
+            <td>{{ r.name }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.date }}</td>
+            <td>{{ r.start_time }} - {{ r.end_time }}</td>
+            <td class="status-active">✅ Aktiv</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Qəbul edilmiş rezerv yoxdur.</p>
+    {% endif %}
+
+    <!-- Ləğv edilmiş rezervasiyalar -->
+    <h2>Ləğv edilmiş rezervasiyalar</h2>
+    {% if deleted_reservations %}
+    <table>
+        <tr>
+            <th>Zal</th>
+            <th>Təşkilat</th>
+            <th>Ad</th>
+            <th>Email</th>
+            <th>Tarix</th>
+            <th>Vaxt</th>
+            <th>Status</th>
+        </tr>
+        {% for r in deleted_reservations %}
+        <tr>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.organization }}</td>
+            <td>{{ r.name }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.date }}</td>
+            <td>{{ r.start_time }} - {{ r.end_time }}</td>
+            <td class="status-deleted">❌ Ləğv edilib</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Ləğv edilmiş rezerv yoxdur.</p>
+    {% endif %}
+</body>
+</html>

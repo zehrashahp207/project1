@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 import os
 import json
 from datetime import datetime
+import uuid  # ID üçün
 
 rezerv = Blueprint("rezerv", __name__, template_folder="templates")
 
@@ -61,7 +62,8 @@ def reserve():
                     return redirect(url_for("rezerv.reserve"))
 
         # Yeni rezerv əlavə et
-        reservations.append({
+        new_rez = {
+            "id": str(uuid.uuid4()),  # unikal ID
             "hall": hall,
             "organization": organization,
             "name": name,
@@ -70,8 +72,11 @@ def reserve():
             "start_time": start_time,
             "end_time": end_time,
             "user": user_email,
-            "status": "active"  # status əlavə edildi
-        })
+            "status": "pending",  # ilkin status
+            "notification": "Rezervasiyanız göndərildi, admin təsdiqini gözləyir ⏳"
+        }
+
+        reservations.append(new_rez)
         save_reservations(reservations)
         flash(f"Rezervasiya uğurla əlavə olundu: {hall} ({date} {start_time}-{end_time})")
         return redirect(url_for("rezerv.my_reservations"))
@@ -86,28 +91,37 @@ def my_reservations():
         return redirect(url_for("login"))
 
     user_email = session["user"]
-    reservations = [r for r in load_reservations() if r.get("user") == user_email and r.get("status") != "deleted"]
-    return render_template("menim_rezervlerim.html", reservations=reservations)
+    reservations = load_reservations()
+
+    # İstifadəçinin bütün rezervasiyaları, ləğv olunmuşlar da daxil
+    user_reservations = [
+        {**r} for r in reservations if r.get("user") == user_email
+    ]
+
+    return render_template("menim_rezervlerim.html", reservations=user_reservations)
+
 
 # ---- Rezervasiyanı “silinmiş” kimi işarələmək ----
-@rezerv.route("/rezervasiya/sil/<int:index>", methods=["POST"])
-def delete_reservation(index):
+@rezerv.route("/rezervasiya/sil", methods=["POST"])
+def delete_reservation():
     if "user" not in session:
         flash("Əvvəlcə daxil olun.")
         return redirect(url_for("login"))
 
     user_email = session["user"]
+    hall = request.form.get("hall")
+    organization = request.form.get("organization")
+
     reservations = load_reservations()
 
-    user_reservations = [r for r in reservations if r.get("user") == user_email and r.get("status") != "deleted"]
+    for r in reservations:
+        if r.get("hall") == hall and r.get("organization") == organization and r.get("user") == user_email and r.get("status") != "deleted":
+            r["status"] = "deleted"
+            r["notification"] = "Siz bu rezervasiyanı silmisiniz ❌"
+            save_reservations(reservations)
+            flash("Rezervasiya silindi (admin paneldə görünəcək).")
+            return redirect(url_for("rezerv.my_reservations"))
 
-    if index < 0 or index >= len(user_reservations):
-        flash("Belə rezerv tapılmadı!")
-        return redirect(url_for("rezerv.my_reservations"))
-
-    rez_to_delete = user_reservations[index]
-    rez_to_delete["status"] = "deleted"  # tam silmək əvəzinə işarələyirik
-    save_reservations(reservations)
-
-    flash("Rezervasiya silindi (admin paneldə görünəcək).")
+    flash("Belə rezerv tapılmadı!")
     return redirect(url_for("rezerv.my_reservations"))
+

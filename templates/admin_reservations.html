@@ -12,6 +12,48 @@
         <a href="{{ url_for('logout') }}" class="check-reservations-btn">Çıxış</a>
     </div>
 
+    <h1>Gözləyən Rezervasiyalar</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Təşkilat</th>
+                <th>Ad</th>
+                <th>Zal</th>
+                <th>Email</th>
+                <th>Tarix</th>
+                <th>Başlanğıc</th>
+                <th>Bitmə</th>
+                <th>Əməliyyatlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in pending_reservations %}
+            <tr>
+                <td>{{ r.organization }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.hall }}</td>
+                <td>{{ r.email }}</td>
+                <td>{{ r.date }}</td>
+                <td>{{ r.start_time }}</td>
+                <td>{{ r.end_time }}</td>
+                <td>
+                    <!-- Təsdiqlə -->
+                    <form action="{{ url_for('approve_reservation', res_id=r.id or loop.index0) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-success">✅ Təsdiqlə</button>
+                    </form>
+
+                    <!-- Ləğv et -->
+                    <form action="{{ url_for('delete_reservation', res_id=r.id or loop.index0) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">❌ Sil</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="8" style="text-align:center;">Gözləyən rezerv yoxdur.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <h1>Aktiv Rezervasiyalar</h1>
     <table>
         <thead>
@@ -23,11 +65,12 @@
                 <th>Tarix</th>
                 <th>Başlanğıc</th>
                 <th>Bitmə</th>
+                <th>Əməliyyatlar</th>
             </tr>
         </thead>
         <tbody>
             {% for r in active_reservations %}
-            <tr>
+            <tr style="background-color:#e6ffe6;">
                 <td>{{ r.organization }}</td>
                 <td>{{ r.name }}</td>
                 <td>{{ r.hall }}</td>
@@ -35,9 +78,15 @@
                 <td>{{ r.date }}</td>
                 <td>{{ r.start_time }}</td>
                 <td>{{ r.end_time }}</td>
+                <td>
+                    <!-- Sil -->
+                    <form action="{{ url_for('delete_reservation', res_id=r.id or loop.index0) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">❌ Sil</button>
+                    </form>
+                </td>
             </tr>
             {% else %}
-            <tr><td colspan="7" style="text-align:center;">Aktiv rezerv yoxdur.</td></tr>
+            <tr><td colspan="8" style="text-align:center;">Aktiv rezerv yoxdur.</td></tr>
             {% endfor %}
         </tbody>
     </table>

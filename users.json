@@ -2,30 +2,6 @@
     {
         "username": "Zehra",
         "surname": "Shahpelengova",
-        "email": "zehra@gmail.com",
-        "password": "scrypt:32768:8:1$ftAZuP4tKkjstfuW$092bfc302a16dcc9b469cc64589087fabcc934b677ef11e9f078dee4446bfe12eb53bd6feec86796e164d824b99833a0e1a2485ec6b823e4a58e24f715777aca"
-    },
-    {
-        "username": "Zehra",
-        "surname": "Shahpelengova",
-        "email": "zahra01@gmail.com",
-        "password": "scrypt:32768:8:1$g6ecW4lw60K6RYRM$4d5f54888ef999d76afc34c3684837298e1871b66b5d8d69f64c820daa0dba8a4cac0a67ba54399c8d6762b8d4b3ff726ca67d7282e91ba2644f87240936cb88"
-    },
-    {
-        "username": "Zehra",
-        "surname": "Shahpelengova",
-        "email": "zahra25@gmail.com",
-        "password": "scrypt:32768:8:1$8gAADIq5BxpkS69C$29f96941c588af092de7ec933e40c9d0a5e7e35abeb1c1f730a1939b0dc5e2e16315efb0d92f1677de7548b01a7489a8d738c6fd434db5463a9ac554a7786961"
-    },
-    {
-        "username": "Zehra",
-        "surname": "Shahpelengova",
-        "email": "zzehra@gmail.com",
-        "password": "scrypt:32768:8:1$q6ya6PVHCkmCqDG4$9bc687cf870acf3d974c4f6dfa7bfcf94e71524c4b59bd1f87e58b20faeb18c831fb3e920ae92dd7f78eeb80430f61be29703cb5620f3291cb971ba9f16202c6"
-    },
-    {
-        "username": "Zehra",
-        "surname": "Shahpelengova",
         "email": "dhycgdgdjhcgjgb@gmail.com",
         "password": "scrypt:32768:8:1$wjEaFvLSZsfjRKO4$2fdaabd9c419f6388dc42b7369ce65961f8064ddbc4011ae761f95ad7a9a175608d5c88438e7bbeb8a1275002beb8704e2df305d3c22336a3bf2ee5bb0ded6a9",
         "role": "user"
@@ -77,6 +53,13 @@
         "surname": "Shahpelengova",
         "email": "zehra001@gmail.com",
         "password": "scrypt:32768:8:1$bNIaeAyY0yZRvrc0$d198adf3d750afea8fc86e76524c293c752deba240e91a19b6c5106fda67b4b40a79c0b6ab4b0673b2e82de01df0803bd0b62068517db3519b0a09c5a38fb896",
+        "role": "admin"
+    },
+    {
+        "username": "Mehemmed ",
+        "surname": "Colcemenli",
+        "email": "mehemmed@gmail.com",
+        "password": "scrypt:32768:8:1$7QK1EeOebGWEG4NQ$37af9a8a962cc47f4eb8f0ce0b1ca65dcabaefa12c1a4868983e6ccb52f16ab7d0370ca4f72c13b67d035239b9ffb803b8ad41ed2a3e9dfd913a646f73413045",
         "role": "user"
     }
 ]

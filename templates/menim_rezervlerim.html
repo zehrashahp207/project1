@@ -11,31 +11,50 @@
 
         {% if reservations %}
         <table class="rezerv-table">
-            <tr>
-                <th>Zal</th>
-                <th>Təşkilat</th>
-                <th>Tarix</th>
-                <th>Vaxt</th>
-                <th>Əməliyyat</th>
-            </tr>
-            {% for r in reservations %}
-            <tr>
-                <td>{{ r.hall }}</td>
-                <td>{{ r.organization }}</td>
-                <td>{{ r.date }}</td>
-                <td>{{ r.start_time }} - {{ r.end_time }}</td>
-                <td>
-                    <form action="{{ url_for('rezerv.delete_reservation', index=loop.index0) }}" method="POST">
-                        <button type="submit" class="btn-delete">Sil</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
+        <tr>
+            <th>Ad və Soyad</th>
+            <th>Zal</th>
+            <th>Təşkilat</th>
+            <th>Tarix</th>
+            <th>Vaxt</th>
+            <th>Status</th>
+            <th>Əməliyyat</th>
+        </tr>
+
+        {% for r in reservations %}
+        <tr>
+            <td>{{ r.name }}</td>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.organization }}</td>
+            <td>{{ r.date }}</td>
+            <td>{{ r.start_time }} - {{ r.end_time }}</td>
+            
+            <td>
+                {% if r.status == "active" %}
+                    <span style="color:green; font-weight:bold;">Qəbul edildi ✅</span>
+                {% elif r.status == "deleted" %}
+                    <span style="color:red; font-weight:bold;">Ləğv edildi ❌</span>
+                {% else %}
+                    <span style="color:orange; font-weight:bold;">Gözləmədə ⏳</span>
+                {% endif %}
+            </td>
+
+            <td>
+                <form action="{{ url_for('rezerv.delete_reservation') }}" method="POST">
+                    <input type="hidden" name="name" value="{{ r.name }}">
+                    <input type="hidden" name="surname" value="{{ r.surname }}">
+                    <input type="hidden" name="hall" value="{{ r.hall }}">
+                    <input type="hidden" name="organization" value="{{ r.organization }}">
+                    <button type="submit" class="btn-delete">Sil</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
         </table>
         {% else %}
         <p class="no-rezerv">Hazırda heç bir rezervasiyanız yoxdur.</p>
         {% endif %}
-
         <a href="{{ url_for('rezerv.reserve') }}" class="btn-secondary">Geri qayıt</a>
     </div>
 </body>
