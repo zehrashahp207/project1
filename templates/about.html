@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<button class="back-button" onclick="history.back()">Geri Qayıt</button>
+
     <div class="background-container">
             <div class="navbar">
                 <div class="logo left-logo">
@@ -29,7 +31,7 @@
 
         <!-- Description -->
         <div class="description">
-              Azərbaycan Əmək və Sosial Münasibətlər Akademiyası 2006‑cı ildə yaradılmışdır və müstəqil ali təhsil müəssisəsi kimi fəaliyyət göstərir.Azərbaycan Həmkarlar İttifaqları Konfederasiyasının təsis etdiyi özəl ali təhsil müəssisəsidir. Akademiyanın əsas məqsədi ölkənin əmək bazarı və sosial münasibətlər sahəsində peşəkar kadrlar hazırlamaqdır. Tələbələrin akademik biliklərlə yanaşı, praktiki bacarıqlarını da inkişaf etdirməsi üçün müxtəlif kurslar və könüllülük proqramları keçirilir. Bu təşəbbüslər tələbələrə real həyatda təcrübə qazanmaq, fərdi və peşəkar inkişafa nail olmaq, eləcə də cəmiyyətə faydalı olmaq imkanı verir. Belə proqramlar tələbələrin gələcək karyeralarına hazırlıq üçün mühüm bir element hesab olunur. Bu gün AƏSMA müasir əmək bazarının tələblərinə uyğun yüksək ixtisaslı kadrların hazırlanmasını həyata keçirir. Akademiyada iki fakültə – “Maliyyə-İqtisad” və “Sosial iş” fakültələri fəaliyyət göstərir. Akademiyada bir kitabxana, iki akt zalı və bir inkişaf mərkəzi mövcuddur.
+              Azərbaycan Əmək və Sosial Münasibətlər Akademiyası (AƏSMA) 1952-ci ildən təsis edilmişdir.Azərbaycan Əmək və Sosial Münasibətlər Akademiyası 2006‑cı ildən etibarən müstəqil ali təhsil müəssisəsi kimi fəaliyyət göstərir.Azərbaycan Həmkarlar İttifaqları Konfederasiyasının təsis etdiyi özəl ali təhsil müəssisəsidir.Akademiyada 2 fakültə – “Maliyyə-İqtisad” və “Sosial iş” fakültələri mövcuddur. Tədris prosesi “İqtisadiyyat və idarəetmə”, “Mühasibat və maliyyə”, “Riyaziyyat və informasiya texnologiyaları”, “Həmkarlar İttifaqları Hərəkatı və sosial fənlər”, “Humanitar fənlər” kafedralarında təşkil olunur. Bundan əlavə, “Magistratura”, “Qiyabi, əlavə təhsil və əcnəbi tələbələrlə iş” şöbələri də fəaliyyət göstərir. Akademiyada təhsil bakalavriat və magistratura səviyyəsində təşkil edilir. Akademiyanın əsas məqsədi ölkənin əmək bazarı və sosial münasibətlər sahəsində peşəkar kadrlar hazırlamaqdır. Tələbələrin akademik biliklərlə yanaşı, praktiki bacarıqlarını da inkişaf etdirməsi üçün müxtəlif kurslar və könüllülük proqramları keçirilir. Bu təşəbbüslər tələbələrə real həyatda təcrübə qazanmaq, fərdi və peşəkar inkişafa nail olmaq, eləcə də cəmiyyətə faydalı olmaq imkanı verir. Belə proqramlar tələbələrin gələcək karyeralarına hazırlıq üçün mühüm bir element hesab olunur. Bu gün AƏSMA müasir əmək bazarının tələblərinə uyğun yüksək ixtisaslı kadrların hazırlanmasını həyata keçirir.</p>
         </div>
 
         <!-- Degree Section -->
@@ -56,6 +58,63 @@
                 </ul>
             </div>
         </div>
+         <!-- Fakültələr -->
+  <section id="faculties">
+    <h2>Fakültələrimiz</h2>
+
+    <!-- Sosial İş Fakültəsi -->
+    <div class="faculty">
+      <h3>Sosial İş Fakültəsi</h3>
+      <p>Sosial iş fakültəsində sosial iş ixtisası üzrə kadr hazırlığı aparılır. Həmçinin fakültədə Gender Araşdırmalar Mərkəzi və Sosial araşdırmalar laboratoriyası fəaliyyət göstərir.</p>
+      <p><strong>Əyani:</strong> Sosial iş – 2200 AZN</p>
+    <p><strong> Qiyabi:</strong> Sosial iş – 1800 AZN</p>
+
+      <img src="{{ url_for('static', filename='images/sosialfakulte.jpeg') }}" alt="Sosial İş Fakültəsi" />
+    </div.
+
+      <!-- Maliyyə və İqtisad Fakültəsi -->
+    <div class="faculty">
+      <h3>Maliyyə və İqtisad Fakültəsi</h3>
+      <p>Maliyyə - İqtisad fakültəsində maliyyə, mühasibat, iqtisadiyyat, dövlət və bələdiyyə idarəetməsi, marketinq ixtisasları üzrə kadr hazırlığı həyata keçirilir. Fakültənin nəzdində Maliyyə uçotu laboratoriyası, “İqtisadi araşdırmalar və innovasiyalar” mərkəzi fəaliyyət göstərir.</p>
+      <p><stronMaliyyə -p>
+        <p><strong>Əyani:</strong></p>
+      <ul>
+        <li>İqtisadiyyat – 2100 AZN</li>
+        <li>Maliyyə – 2100 AZN</li>
+        <li>Mühasibatlıq – 2100 AZN</li>
+        <li>Marketinq – 2100 AZN</li>
+        <li>Dövlət və bələdiyyə idarəetməsi – 2100 AZN</li>
+      </ul>
+      
+      <p><strong>Qiyabi:</strong></p>
+      <ul>
+        <li>Mühasibatlıq – 1800 AZN</li>
+        <li>Marketinq – 1800 AZN</li>
+      </ul>
+
+      <img src="{{ url_for('static', filename='images/maliyyefakulte.jpeg') }}" alt="Maliyyə və İqtisad Fakültəsi" />
+    </div>
+
+    <!-- Magistratura -->
+    <div class="faculty">
+      <h3>Magistratura Təhsili</h3>
+      <p>Əmək, sosial münasibətlər və iqtisadiyyat sahələrində ixtisaslaşmış magistr proqramları.</p>
+      <ul>
+        <li>
+İqtisadiyyatın tənzimlənməsi 1600 AZN</li>
+<li>Turizmin iqtisadiyyatı 1600 AZN</li>
+<li>Mülkiyyət obyeklərinin qiymətləndirilməsi 1600 AZN</li>
+<li>Maliyyə bazarları 1600 AZN</li>
+<li>Bank işi 1600 AZN</li>
+<li>Sığorta və risklərin idarə edilməsi 1600 AZN</li>
+<li>Beynəlxalq marketinq 1600 AZN</li>
+<li>Maliyyə mühasibatlığı 1600 AZN</li>
+<li>Həyat fəaliyyətinin müxtəlif sahələrində sosial iş 1600 AZN</li>
+<li>Gənclərlə iş 1600 AZN</li>
+
+      </ul>
+    </div>
+  </section>
 
         <!-- Akt Zalı bölməsi -->
         <div class="act-hall">

@@ -22,6 +22,7 @@ def save_reservations(reservations):
     with open(RESERV_FILE, "w", encoding="utf-8") as f:
         json.dump(reservations, f, ensure_ascii=False, indent=4)
 
+
 # ---- Rezervasiya səhifəsi ----
 @rezerv.route("/rezervasiya", methods=["GET", "POST"])
 def reserve():

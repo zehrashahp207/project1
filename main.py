@@ -250,7 +250,6 @@ def my_reservations():
     return render_template("menim_rezervlerim.html", reservations=user_reservations)
 
 
-
 # --- Qeydiyyat ---
 @app.route("/qeydiyyat", methods=["GET", "POST"])
 def register():

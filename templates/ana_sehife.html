@@ -27,71 +27,64 @@
     <div class="header-divider"></div>
   </header>
 
+  <button class="back-button" onclick="history.back()">Geri Qayıt</button>
+
+
   <!-- ==================== -->
   <!-- AKADEMİYA HAQQINDA -->
   <!-- ==================== -->
    <section id="about" class="about container">
-  <h2>Akademiya Haqqında</h2>
-  <p>Azərbaycan Əmək və Sosial Münasibətlər Akademiyası (AƏSMA) 1952-ci ildən təsis edilmişdir. 2006-cı ildə müstəqil olaraq Azərbaycan Əmək və Sosial Münasibətlər Akademiyası adı ilə fəaliyyətini davam etdirmişdir.
-      Hazırda AƏSMA özəl ali təhsil müəssisəsi kimi fəaliyyət göstərir və müasir əmək bazarının tələblərinə uyğun kadr hazırlığını həyata keçirir. Akademiyada 2 fakültə – “Maliyyə-İqtisad” və “Sosial iş” fakültələri mövcuddur. Tədris prosesi “İqtisadiyyat və idarəetmə”, “Mühasibat və maliyyə”, “Riyaziyyat və informasiya texnologiyaları”, “Həmkarlar İttifaqları Hərəkatı və sosial fənlər”, “Humanitar fənlər” kafedralarında təşkil olunur. Bundan əlavə, “Magistratura”, “Qiyabi, əlavə təhsil və əcnəbi tələbələrlə iş” şöbələri də fəaliyyət göstərir. Akademiyada təhsil bakalavriat və magistratura səviyyəsində təşkil edilir.</p>
-</section>
-
+  <h2>Rezervasiya Sistemi üzrə Qaydalar</h2>
+  <h3>Aşağıda təqdim olunan müddəalar, Azərbaycan Əmək və Sosial Münasibətlər Akademiyasının daxili elektron rezervasiya sistemindən səmərəli, şəffaf və düzgün şəkildə istifadə olunmasını təmin etmək məqsədilə hazırlanmışdır. Bu qaydalar, həm istifadəçilər (tələbələr, əməkdaşlar və digər müraciət edən şəxslər), həm də sistem administratorları arasında qarşılıqlı əlaqənin aydın şəkildə tənzimlənməsinə xidmət edir.
+Bu müddəaların əsas məqsədi - rezervasiya prosesinin dəqiq qaydada idarə olunması, istifadəçi və administrator arasında qarşılıqlı məsuliyyət və şəffaf əməkdaşlıq mühitinin yaradılması, həmçinin tədbir məkanlarının düzgün bölüşdürülməsini təmin etməkdir.</h3>
   <!-- Fakültələr -->
   <section id="faculties">
-    <h2>Fakültələrimiz</h2>
+    <h2>Rezervasiya sistemi üzrə iş prinsipi</h2>
 
     <!-- Sosial İş Fakültəsi -->
     <div class="faculty">
-      <h3>Sosial İş Fakültəsi</h3>
-      <p>Sosial iş fakültəsində sosial iş ixtisası üzrə kadr hazırlığı aparılır. Həmçinin fakültədə Gender Araşdırmalar Mərkəzi və Sosial araşdırmalar laboratoriyası fəaliyyət göstərir.</p>
-      <p><strong>Əyani:</strong> Sosial iş – 2200 AZN</p>
-    <p><strong> Qiyabi:</strong> Sosial iş – 1800 AZN</p>
+      <h3>1.İstifadəçi sistemə daxil olduqdan sonra ilkin mərhələdə qeydiyyat paneli vasitəsilə sistemə daxil olmalıdır.</h3>
+      
 
       <img src="{{ url_for('static', filename='images/sosialfakulte.jpeg') }}" alt="Sosial İş Fakültəsi" />
     </div.
 
       <!-- Maliyyə və İqtisad Fakültəsi -->
     <div class="faculty">
-      <h3>Maliyyə və İqtisad Fakültəsi</h3>
-      <p>Maliyyə - İqtisad fakültəsində maliyyə, mühasibat, iqtisadiyyat, dövlət və bələdiyyə idarəetməsi, marketinq ixtisasları üzrə kadr hazırlığı həyata keçirilir. Fakültənin nəzdində Maliyyə uçotu laboratoriyası, “İqtisadi araşdırmalar və innovasiyalar” mərkəzi fəaliyyət göstərir.</p>
-      <p><stronMaliyyə -p>
-        <p><strong>Əyani:</strong></p>
-      <ul>
-        <li>İqtisadiyyat – 2100 AZN</li>
-        <li>Maliyyə – 2100 AZN</li>
-        <li>Mühasibatlıq – 2100 AZN</li>
-        <li>Marketinq – 2100 AZN</li>
-        <li>Dövlət və bələdiyyə idarəetməsi – 2100 AZN</li>
-      </ul>
-      
-      <p><strong>Qiyabi:</strong></p>
-      <ul>
-        <li>Mühasibatlıq – 1800 AZN</li>
-        <li>Marketinq – 1800 AZN</li>
-      </ul>
+      <h3>2.Qeydiyyat prosesi zamanı istifadəçinin ad ve soyadı özünə məxsus elektron poçt ünvanı və şifrəni daxil etməlidir.</h3>
 
       <img src="{{ url_for('static', filename='images/maliyyefakulte.jpeg') }}" alt="Maliyyə və İqtisad Fakültəsi" />
     </div>
 
-    <!-- Magistratura -->
+    <!-- Maliyyə və İqtisad Fakültəsi -->
     <div class="faculty">
-      <h3>Magistratura Təhsili</h3>
-      <p>Əmək, sosial münasibətlər və iqtisadiyyat sahələrində ixtisaslaşmış magistr proqramları.</p>
+      <h3>3.Qeydiyyatdan sonra istifadəçi rezervasiya paneli vasitəsilə aşağıdakı məlumatları daxil etməlidir:</h3>
       <ul>
-        <li>
-İqtisadiyyatın tənzimlənməsi 1600 AZN</li>
-<li>Turizmin iqtisadiyyatı 1600 AZN</li>
-<li>Mülkiyyət obyeklərinin qiymətləndirilməsi 1600 AZN</li>
-<li>Maliyyə bazarları 1600 AZN</li>
-<li>Bank işi 1600 AZN</li>
-<li>Sığorta və risklərin idarə edilməsi 1600 AZN</li>
-<li>Beynəlxalq marketinq 1600 AZN</li>
-<li>Maliyyə mühasibatlığı 1600 AZN</li>
-<li>Həyat fəaliyyətinin müxtəlif sahələrində sosial iş 1600 AZN</li>
-<li>Gənclərlə iş 1600 AZN</li>
-
+        <li>seçilən salonun adı</li>
+        <li>təşkilatın adı</li>
+        <li>tədbirin növü</li>
+        <li>Mtəşkilatçı nümayəndənin adı və soyadı</li>
+        <li>tədbirin tarixi və saatı</li>
       </ul>
+      
+
+      <img src="{{ url_for('static', filename='images/maliyyefakulte.jpeg') }}" alt="Maliyyə və İqtisad Fakültəsi" />
     </div>
+
+    <!-- Maliyyə və İqtisad Fakültəsi -->
+    <div class="faculty">
+      <h3>4.İstifadəçi tərəfindən daxil edilən rezervasiya məlumatlarının təsdiqlənməsi və ya ləğv edilməsi yalnız administrator tərəfindən həyata keçirilir. Bu müddət ərzində rezervasiya məlumatları “gözləmə” statusunda administrator panelində saxlanılır. Əgər rezervasiya təsdiqlənərsə və ya ləğv edilərsə, bu barədə istifadəçiyə sistem vasitəsilə bildiriş göndərilir.</h3>
+
+      <img src="{{ url_for('static', filename='images/maliyyefakulte.jpeg') }}" alt="Maliyyə və İqtisad Fakültəsi" />
+    </div>
+
+    <!-- Maliyyə və İqtisad Fakültəsi -->
+    <div class="faculty">
+      <h3>5.Hər hansı bir salon üçün eyni tarix və saatda başqa bir istifadəçi tərəfindən rezervasiya sorğusu daxil olarsa, sistem avtomatik olaraq həmin məkanın hazırda dolu olduğu barədə məlumat təqdim edir.</h3>
+
+      <img src="{{ url_for('static', filename='images/maliyyefakulte.jpeg') }}" alt="Maliyyə və İqtisad Fakültəsi" />
+    </div>
+
   </section>
 
 
