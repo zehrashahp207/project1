@@ -1,0 +1,115 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #7095d6, #ffffff);
+    color: #111d3b;
+    margin: 0;
+    padding: 10px;
+    min-height: 100vh;
+}
+
+/* Ana konteyner */
+.container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+}
+
+/* Başlıqlar */
+h1 {
+    text-align: center;
+    color: #1d2a57;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #1d2a57;
+    margin-top: 25px;
+}
+
+/* Cədvəllər */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Cədvəllər arası məsafə */
+}
+
+table th, table td {
+    border: 1px solid #d6d6d6;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #5f80c0;
+    color: #fff;
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background: #f4f6ff;
+}
+
+/* Status rəngləri */
+.status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #e89f0c;
+    font-weight: bold;
+}
+
+.status-deleted {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Düymələr */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-approve {
+    background-color: #1a702e;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-delete {
+    background-color: #b62a26;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+form {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Boş mətn */
+.empty-text {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 15px;
+}
+

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="az">
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminrezerv.css') }}">
 <head>
     <meta charset="UTF-8">
     <title>Admin Rezervasiyalar</title>
@@ -19,7 +20,7 @@
     </style>
 </head>
 <body>
-    <h1>Admin Rezervasiyalar Paneli</h1>
+    <h1>Admin Rezervasiya Paneli</h1>
     <!-- Gözləmədə olan rezervasiyalar -->
     <h2>Gözləmədə olan rezervasiyalar</h2>
     {% if pending_reservations %}
@@ -47,7 +48,7 @@
                     <input type="hidden" name="organization" value="{{ r.organization }}">
                     <input type="hidden" name="email" value="{{ r.email }}">
                     <input type="hidden" name="date" value="{{ r.date }}">
-                    <button type="submit" type="submit"><span style="color:green; font-weight:bold;">Qəbul et ✅</span></button>
+                    <button type="submit" class="btn-approve">Qəbul et ✅</button>
                 </form>
 
                 <form action="{{ url_for('delete_reservation', res_id=r.id) }}" method="POST">
@@ -55,7 +56,7 @@
                     <input type="hidden" name="organization" value="{{ r.organization }}">
                     <input type="hidden" name="email" value="{{ r.email }}">
                     <input type="hidden" name="date" value="{{ r.date }}">
-                    <button type="submit" type="submit"><span style="color:red; font-weight:bold;">Ləğv et ❌</span></button>
+                    <button type="submit" class="btn-delete">Ləğv et ❌</button>
                 </form>
             </td>
         </tr>

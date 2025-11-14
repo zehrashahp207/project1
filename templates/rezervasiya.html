@@ -21,6 +21,7 @@
 <button class="back-button" onclick="history.back()">Geri qayıt</button>
 
 <form method="POST" action="{{ url_for('rezerv.reserve') }}" class="rezerv-form">
+
     <label for="hall">Salon seçin:</label>
     <select name="hall" id="hall" required>
       <option value="" disabled selected hidden>--Salon seçin--</option>
@@ -41,12 +42,12 @@
       <option value="Digər">Digər</option>
     </select>
 
-
     <label for="name">Ad və Soyad:</label>
     <input type="text" name="name" id="name" required>
 
     <label for="date">Tarix:</label>
-    <input type="date" name="date" id="date" required>
+    <!-- 🔥 Minimum tarix (bugünün tarixi) əlavə olundu -->
+    <input type="date" name="date" id="date" min="{{ current_date }}" required>
 
     <label for="start_time">Başlama vaxtı:</label>
     <input type="time" name="start_time" id="start_time" required>
@@ -58,6 +59,7 @@
 
     <a href="{{ url_for('rezerv.my_reservations') }}" class="view-my-rezervs">Rezervasiyalarımı gör</a>
 </form>
+
 <hr>
 </body>
 </html>

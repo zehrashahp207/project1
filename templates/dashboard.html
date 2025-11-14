@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
 </head>
 <body>
-    <div class="dashboard-container" >
+    <div class="dashboard-container">
         <h1>Xoş gəldiniz, {{ user.username }}!</h1>
         <p>İstifadəçi: {{ user.username }} {{ user.surname }}</p>
         <p>Email: {{ user.email }}</p>
 
-        <div class="buttons">
-            <a href="{{ url_for('home') }}" class="btn">Home səhifəsinə qayıt</a>
-            <a href="{{ url_for('rezerv.reserve') }}" class="btn">Rezervasiya et</a>
-        </div>
+            <div class="buttons">
+                <a href="{{ url_for('home') }}" class="btn">Home səhifəsinə qayıt</a>
+                <a href="{{ url_for('rezerv.reserve') }}" class="btn">Rezervasiya et</a>
+                <a href="{{ url_for('my_reservations') }}" class="btn">Rezervasiyalarımı Gör</a>
 
-        <form action="{{ url_for('logout') }}">
+            </div>
+
+        <form action="{{ url_for('logout') }}" method="get">
             <button type="submit">Çıxış</button>
         </form>
     </div>

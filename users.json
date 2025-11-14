@@ -61,5 +61,26 @@
         "email": "mehemmed@gmail.com",
         "password": "scrypt:32768:8:1$7QK1EeOebGWEG4NQ$37af9a8a962cc47f4eb8f0ce0b1ca65dcabaefa12c1a4868983e6ccb52f16ab7d0370ca4f72c13b67d035239b9ffb803b8ad41ed2a3e9dfd913a646f73413045",
         "role": "user"
+    },
+    {
+        "username": "Tehmine",
+        "surname": "Abbasova",
+        "email": "taxmina001@gmail.com",
+        "password": "scrypt:32768:8:1$bAggngjg8cWQQC3e$1b585bd57c57f55ce1cb58e3672c3110c3c3400f69f324e0edec6efc6bbcdfde7c78cd2c73b17731114cf31dccde46b90d34dde63c2add955b32053a53deefa9",
+        "role": "user"
+    },
+    {
+        "username": "User",
+        "surname": "User's surname",
+        "email": "user000@gmail.com",
+        "password": "scrypt:32768:8:1$tIUgCIB5YjupYQqa$535be8e2a90961e4229f8f76b9eefb9974da55e2b4a0f88958059bbe9beb442c2940f852e60de1dcbbeee54e646aac7bc31194be5408dff2da11c8bfe00ecd00",
+        "role": "user"
+    },
+    {
+        "username": "Bahar ",
+        "surname": "Qasimova",
+        "email": "bahar@gmail.com",
+        "password": "scrypt:32768:8:1$d5xqE030Ok6WRyF7$ea88eb2d860e97bbe3deede4e626f22effc16116b6688d840c0ea750239e2b2cfec85b6912353351386e5c9cf9068ae883e32065f26f664a0085db26128b4107",
+        "role": "user"
     }
 ]

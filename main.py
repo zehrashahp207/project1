@@ -237,6 +237,19 @@ def haqqinda():
 def homee():
     return render_template("ana_sehife.html")
 
+@app.route("/menim_rezervlerim")
+def my_reservations():
+    if "user" not in session:
+        flash("Zəhmət olmasa əvvəlcə daxil olun.")
+        return redirect(url_for("login"))
+
+    email = session["user"]
+    reservations = load_reservations()
+    user_reservations = [r for r in reservations if r["email"] == email]
+
+    return render_template("menim_rezervlerim.html", reservations=user_reservations)
+
+
 
 # --- Qeydiyyat ---
 @app.route("/qeydiyyat", methods=["GET", "POST"])
@@ -418,6 +431,10 @@ def delete_reservation():
 def logout():
     session.pop("user", None)
     session.pop("role", None)
+    
+    # Logout zamanı bütün flash mesajlarını silmək
+    session.pop('_flashes', None)
+    
     flash("Siz çıxış etdiniz.")
     return redirect(url_for("home"))
 
