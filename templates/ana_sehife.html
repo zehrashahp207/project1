@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
 </head>
 <body>
-
+  <button class="back-button" onclick="history.back()">Geri Qayıt</button> 
   <!-- ==================== -->
   <!-- HEADER -->
   <!-- ==================== -->
@@ -84,7 +84,6 @@ Bu müddəaların əsas məqsədi - rezervasiya prosesinin dəqiq qaydada idarə
 
       <img src="{{ url_for('static', filename='images/maliyyefakulte.jpeg') }}" alt="Maliyyə və İqtisad Fakültəsi" />
     </div>
-
   </section>
 
 
@@ -112,6 +111,7 @@ Bu müddəaların əsas məqsədi - rezervasiya prosesinin dəqiq qaydada idarə
         <div class="footer-right">
           <p>📍 Ünvan: Azadlıq pr. 181, Bakı</p>
         </div>
+        
       </div>
 
       <!-- Aşağı hissə: Copy -->
@@ -120,4 +120,5 @@ Bu müddəaların əsas məqsədi - rezervasiya prosesinin dəqiq qaydada idarə
       </div>
     </div>
   </footer>
+</body>
 </html>
