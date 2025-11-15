@@ -1,13 +1,13 @@
 from flask import Blueprint, request, jsonify, render_template
-import re, time
+import json, re, time
 from pathlib import Path
 from ipaddress import ip_address
-from openpyxl import Workbook, load_workbook   # EXCEL kitabxanası
+import csv
 
 contact_bp = Blueprint("contact_bp", __name__, template_folder="templates")
 
 PRIMARY = "#2A314D"
-EXCEL_PATH = Path("messages.xlsx")   # EXCEL fayl yolu
+CSV_PATH = Path("messages.csv")
 last_submit_by_ip = {}
 
 # REGEX-lər
@@ -15,34 +15,27 @@ EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 FIRST_NAME_RE = re.compile(r"^[A-ZƏİÖÜÇŞĞ][a-zəiöüçşğ]+$")
 LAST_NAME_RE = re.compile(r"^[A-ZƏİÖÜÇŞĞ][a-zəiöüçşğ]+$")
 
-# Excel-ə mesaj yazmaq
-def save_message_excel(first_name, last_name, email, message, ip):
-    # Əgər fayl yoxdursa — yaradırıq və başlıqları yazırıq
-    if not EXCEL_PATH.exists():
-        wb = Workbook()
-        ws = wb.active
-        ws.title = "Messages"
+# CSV-yə mesaj yazmaq
+def save_message_csv(first_name, last_name, email, message, ip):
+    file_exists = CSV_PATH.exists()
 
-        ws.append(["first_name", "last_name", "email", "message", "ip", "created_at"])
-        wb.save(EXCEL_PATH)
+    with open(CSV_PATH, "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
 
-    # Mövcud Excel faylını açıb yeni sətir əlavə edirik
-    wb = load_workbook(EXCEL_PATH)
-    ws = wb.active
+        # Fayl yeni yaradılıbsa başlıq yazılır
+        if not file_exists:
+            writer.writerow(["first_name", "last_name", "email", "message", "ip", "created_at"])
 
-    ws.append([
-        first_name,
-        last_name,
-        email,
-        message,
-        str(ip),
-        time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    ])
+        writer.writerow([
+            first_name,
+            last_name,
+            email,
+            message,
+            str(ip),
+            time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        ])
 
-    wb.save(EXCEL_PATH)
-
-
-# Validasiya
+# Validasiya hissəsi
 def validate_payload(data: dict):
     errors = {}
     first_name = (data.get("first_name") or "").strip()
@@ -71,7 +64,7 @@ def əlaqə():
     return render_template("contact.html", primary=PRIMARY)
 
 
-# API — mesaj göndərmək
+# API — mesaj göndərmək üçün
 @contact_bp.post("/api/əlaqə")
 def api_əlaqə():
     data = request.get_json(force=True, silent=True) or {}
@@ -80,7 +73,7 @@ def api_əlaqə():
     if errors:
         return jsonify({"error": "; ".join(f"{k}: {v}" for k, v in errors.items())}), 400
 
-    # IP limit (anti-spam)
+    # İP limiti (anti-spam)
     try:
         client_ip = request.headers.get("X-Forwarded-For", request.remote_addr).split(",")[0].strip()
         client_ip = ip_address(client_ip)
@@ -95,8 +88,8 @@ def api_əlaqə():
 
     last_submit_by_ip[client_ip] = now
 
-    # Mesaj EXCEL-ə yazılır ✔
-    save_message_excel(
+    # Mesaj CSV-yə yazılır
+    save_message_csv(
         first_name=data["first_name"].strip(),
         last_name=data["last_name"].strip(),
         email=data["email"].strip(),
@@ -107,18 +100,14 @@ def api_əlaqə():
     return jsonify({"ok": True})
 
 
-# Admin paneli — Excel-dən mesajları oxumaq
+# Admin panelində mesajların göstərilməsi
 @contact_bp.get("/admin/messages")
 def admin_messages():
     messages = []
 
-    if EXCEL_PATH.exists():
-        wb = load_workbook(EXCEL_PATH)
-        ws = wb.active
-
-        headers = [cell.value for cell in ws[1]]
-
-        for row in ws.iter_rows(min_row=2, values_only=True):
-            messages.append(dict(zip(headers, row)))
+    if CSV_PATH.exists():
+        with open(CSV_PATH, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            messages = list(reader)
 
     return render_template("admin_messages.html", messages=messages, primary=PRIMARY)
