@@ -6,27 +6,8 @@ from rezervasiya import rezerv, load_reservations, save_reservations
 from dotenv import load_dotenv
 import os
 from contactpage import contact_bp  
-
-# --- Yükləmələr və ayarlar ---
-load_dotenv()
-app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY", "defaultsecret")
-USERS_FILE = "users.json"
-
-# --- Blueprint-lər ---
-app.register_blueprint(contact_bp)
-app.register_blueprint(rezerv)
-from admin_panel import admin_bp
-app.register_blueprint(admin_bp)
-
-from flask import Flask, request, render_template, redirect, url_for, flash, session
-from werkzeug.security import generate_password_hash, check_password_hash
-from user import load_users, save_users
-from password import is_strong_password
-from rezervasiya import rezerv, load_reservations, save_reservations
-from dotenv import load_dotenv
-import os
-from contactpage import contact_bp  
+from flask import Blueprint, render_template, redirect, url_for, flash, session, request
+from rezervasiya import load_reservations, save_reservations
 
 # --- Yükləmələr və ayarlar ---
 load_dotenv()
@@ -169,7 +150,6 @@ def view_reservations():
         active_reservations=active_reservations,
         deleted_reservations=deleted_reservations
     )
-
 
 # --- Rezervasiyanın təsdiqi ---
 @app.route("/admin/reservations/approve/<res_id>", methods=["POST"])

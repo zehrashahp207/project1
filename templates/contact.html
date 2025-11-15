@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='contack.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -48,6 +49,37 @@
       <button id="submitBtn" class="btn" type="submit">Göndər</button>
       <div id="alert"></div>
     </form>
+
+    <!-- Admin üçün mesajlar bölməsi -->
+    {% if session.get('role') == 'admin' %}
+    <h2>Gələn Mesajlar</h2>
+    {% if messages %}
+    <table>
+      <thead>
+        <tr>
+          <th>Ad</th>
+          <th>Soyad</th>
+          <th>Email</th>
+          <th>Mesaj</th>
+          <th>Tarix</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for msg in messages %}
+        <tr>
+          <td>{{ msg.first_name }}</td>
+          <td>{{ msg.last_name }}</td>
+          <td>{{ msg.email }}</td>
+          <td>{{ msg.message }}</td>
+          <td>{{ msg.date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>Hələ mesaj yoxdur.</p>
+    {% endif %}
+    {% endif %}
 
     <div class="socials">
       <a href="https://facebook.com/share/1AvLUT2pAK/" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
