@@ -13,10 +13,10 @@ body {
 }
 
 /* Geriyə qayıt düyməsi */
-.back-button {    
+.back-button {
     position: absolute;
-    top: 100px;
-    left: 30px;
+    top: 90px;   
+    left: 35px;  
     padding: 15px 24px;
     background-color: #335AA2;
     border: none;
@@ -145,17 +145,22 @@ img {
 /* =============================== */
 
 .main-footer {
-  background-color:#1e3799;
+  background-color: #1e3799;
   padding: 10px 0;
-  font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #fff;
+  width: 99.6vw;     /* tam ekran genişliyi */
+  margin-left: calc(50% - 50vw); /* mərkəzləşdirilmiş layoutu sıfırlayır */
 }
 
+
+
 .footer-content.container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
+
+
 
 .footer-top {
   display: flex;
@@ -163,6 +168,14 @@ img {
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  padding-top: 17px;
+}
+
 
 .footer-left {
   flex: 1;
