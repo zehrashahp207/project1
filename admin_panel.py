@@ -1,11 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, session, request
 import json, os
-from flask import send_file
-import csv
-from pathlib import Path
-from openpyxl import load_workbook
-
-MESSAGES_FILE = Path("messages.xlsx") 
 
 admin_bp = Blueprint("admin_bp", __name__, template_folder="templates")
 
@@ -29,28 +23,6 @@ def save_reservations(reservations):
 
 
 # ======== ADMIN PANEL ========
-# Admin paneldən mesajlara baxmaq
-@admin_bp.route("/admin-panel/messages")
-def admin_messages():
-    messages = []
-
-    if MESSAGES_FILE.exists():
-        wb = load_workbook(MESSAGES_FILE)
-        ws = wb.active
-
-        # Başlıqları oxumaq üçün 2-ci sətirdən başlayırıq
-        for row in ws.iter_rows(min_row=2, values_only=True):
-            messages.append({
-                "first_name": row[0],
-                "last_name": row[1],
-                "email": row[2],
-                "message": row[3],
-                "ip": row[4],
-                "created_at": row[5]
-            })
-
-    return render_template("admin_messages.html", messages=messages)
-
 @admin_bp.route("/admin-panel")
 def admin_panel():
     if "user" not in session or session.get("role") != "admin":

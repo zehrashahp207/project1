@@ -10,11 +10,10 @@
     <div class="container">
         <h1>Xoş gəlmisiniz, {{ user.username }} (Admin)</h1>
         
-        <!-- Çıxış və Rezervasiyaları yoxla düymələri -->
+        <!-- Çıxış, Rezervasiyalar və Əlaqə Mesajları düymələri -->
         <p>
             <a class="logout-btn" href="{{ url_for('logout') }}">Çıxış</a>
             <a class="check-reservations-btn" href="{{ url_for('view_reservations') }}">Rezervasiyaları Yoxla</a>
-            <a href="{{ url_for('admin_bp.admin_messages') }}" class="check-reservations-btn">Mesajlar 📩</a>
 
         </p>
 

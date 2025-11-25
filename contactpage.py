@@ -1,8 +1,10 @@
-from flask import Blueprint, request, jsonify, render_template
-import json, re, time
+from flask import Blueprint, request, jsonify, render_template, send_file
+import re, time
 from pathlib import Path
 from ipaddress import ip_address
 import csv
+from datetime import datetime
+import pandas as pd
 
 contact_bp = Blueprint("contact_bp", __name__, template_folder="templates")
 
@@ -19,23 +21,25 @@ LAST_NAME_RE = re.compile(r"^[A-ZƏİÖÜÇŞĞ][a-zəiöüçşğ]+$")
 def save_message_csv(first_name, last_name, email, message, ip):
     file_exists = CSV_PATH.exists()
 
-    with open(CSV_PATH, "a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-
-        # Fayl yeni yaradılıbsa başlıq yazılır
+    with open(CSV_PATH, "a", encoding="utf-8", newline="\n") as f:
+        writer = csv.writer(f, delimiter=';')  # Excel üçün uyğundur
         if not file_exists:
-            writer.writerow(["first_name", "last_name", "email", "message", "ip", "created_at"])
-
+            writer.writerow(["first_name", "last_name", "email", "message", "created_at"])
         writer.writerow([
             first_name,
             last_name,
             email,
             message,
-            str(ip),
-            time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         ])
 
-# Validasiya hissəsi
+# CSV → Excel faylına çevirmək
+def update_excel_from_csv():
+    if CSV_PATH.exists():
+        df = pd.read_csv(CSV_PATH, delimiter=';', encoding='utf-8')
+        df.to_excel("messages.xlsx", index=False)
+
+# Validasiya
 def validate_payload(data: dict):
     errors = {}
     first_name = (data.get("first_name") or "").strip()
@@ -57,14 +61,12 @@ def validate_payload(data: dict):
 
     return errors
 
-
 # Əlaqə səhifəsi
 @contact_bp.get("/əlaqə")
 def əlaqə():
     return render_template("contact.html", primary=PRIMARY)
 
-
-# API — mesaj göndərmək üçün
+# API — mesaj göndərmək
 @contact_bp.post("/api/əlaqə")
 def api_əlaqə():
     data = request.get_json(force=True, silent=True) or {}
@@ -82,7 +84,6 @@ def api_əlaqə():
 
     now = time.time()
     last = last_submit_by_ip.get(client_ip)
-
     if last and (now - last) < 15:
         return jsonify({"error": "Çox tez-tez göndərirsiniz. 15 saniyə sonra yenidən cəhd edin."}), 429
 
@@ -97,17 +98,25 @@ def api_əlaqə():
         ip=client_ip
     )
 
-    return jsonify({"ok": True})
+    # Excel faylı yenilənir
+    update_excel_from_csv()
 
+    return jsonify({"ok": True})
 
 # Admin panelində mesajların göstərilməsi
 @contact_bp.get("/admin/messages")
 def admin_messages():
     messages = []
-
     if CSV_PATH.exists():
         with open(CSV_PATH, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
+            reader = csv.DictReader(f, delimiter=';')
             messages = list(reader)
-
     return render_template("admin_messages.html", messages=messages, primary=PRIMARY)
+
+# Admin panelindən Excel faylı yükləmək
+@contact_bp.get("/admin/messages.xlsx")
+def download_excel():
+    if Path("messages.xlsx").exists():
+        return send_file("messages.xlsx", as_attachment=True)
+    else:
+        return "Excel faylı mövcud deyil", 404
