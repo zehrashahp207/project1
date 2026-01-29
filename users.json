@@ -82,5 +82,26 @@
         "email": "bahar@gmail.com",
         "password": "scrypt:32768:8:1$d5xqE030Ok6WRyF7$ea88eb2d860e97bbe3deede4e626f22effc16116b6688d840c0ea750239e2b2cfec85b6912353351386e5c9cf9068ae883e32065f26f664a0085db26128b4107",
         "role": "user"
+    },
+    {
+        "username": "Zehra ",
+        "surname": "\u015eahp\u0259l\u0259ngova",
+        "email": "zehra@gmail.com",
+        "password": "scrypt:32768:8:1$Zl9igD1z0qa9NOly$dd6855cf5ee635be2b6c3214f0d74d2e0648ef588fba8e17899bfe4fa696f526250a753258d3edd9597c5da39b7a768cbed9a85cdb10e1c712245a890a888880",
+        "role": "user"
+    },
+    {
+        "username": "Zehra ",
+        "surname": "\u015eahp\u0259l\u0259ngova",
+        "email": "zehra27@gmail.com",
+        "password": "scrypt:32768:8:1$Yey6atbxjux21rxb$1d4a03373c7675d509ba805f92f26d7835b280ff76403e07122b03c3308b95325b44cc411365a16225179af7a9ae2202d85ec0db59b443e0e2222ccf65d9e62c",
+        "role": "user"
+    },
+    {
+        "username": "Zehra ",
+        "surname": "\u015eahp\u0259l\u0259ngova",
+        "email": "zehra37@gmail.com",
+        "password": "scrypt:32768:8:1$wmoOw6sTm5agbCAN$6b43b687e38849023757bae207134ee844281f61e99b06750bd5d73f9ac648bfe55fc0b47aae925a8e92327522f03ab3a7b2c0de0c82b22903d28bca2437471a",
+        "role": "user"
     }
 ]

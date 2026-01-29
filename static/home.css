@@ -43,12 +43,24 @@ body {
   font-size: 1.1rem;
 }
 
-.left-title,
-.right-title {
+.left-title img,
+.right-title img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+.left-title {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  white-space: nowrap;
 }
+
+.title-text {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
 
 .logo {
   height: 60px;
@@ -57,6 +69,18 @@ body {
   vertical-align: middle;
 }
 
+.title-text {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+
+.logo {
+  height: 60px;
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
 /* Naviqasiya menyusu (tam ekran deyil, ortalı) */
 .nav-bar-wrapper {
   background-color: #1e3799;
