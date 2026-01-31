@@ -14,20 +14,22 @@
 </head>
 
 <body>
+
   <header class="main-header">
 
     <!-- Üst sətr: Loqolar və adlar -->
-<div class="top-bar">
-  <div class="left-title">
-    <img src="https://amiu-hik.etihi.org/_next/static/media/ahik-new-logo.57127c52.png" alt="AHIK Loqosu" />
-    <span>Azərbaycan Həmkarlar İttifaqları Konfederasiyası</span>
-  </div>
-  <div class="right-title">
-    <span>Azərbaycan Əmək və Sosial Münasibətlər Akademiyası</span>
-    <img src="https://aesma.edu.az/images/aesma-logo.png" alt="AƏSMA Loqosu" class="logo" />
-  </div>
-</div>
+    <div class="top-bar">
+      <div class="left-title">
+        <img src="{{ url_for('static', filename='images/ahiklogo.png') }}"  />
 
+        <span>Azərbaycan Həmkarlar İttifaqları Konfederasiyası</span>
+
+      </div>
+      <div class="right-title">
+        <span>Azərbaycan Əmək və Sosial Münasibətlər Akademiyası</span>
+        <img src="https://aesma.edu.az/images/aesma-logo.png" alt="AƏSMA Loqosu" class="logo" />
+      </div>
+    </div>
 
     <!-- Naviqasiya menyusu -->
     <div class="nav-bar-wrapper">
@@ -35,7 +37,7 @@
         <div class="left-nav">
           <a href="{{ url_for('haqqinda') }}" class="nav-button">Haqqında</a>  <!-- Nuraygilindi -->
           <a href="{{ url_for('contact_bp.əlaqə') }}" class="nav-button">Əlaqə</a> <!-- Sabiragilinki  -->
-          <a href="{{ url_for('homee') }}" class="nav-button">Rezarvasiya qaydaları</a> <!-- Sehanegilindi bu -->
+          <a href="{{ url_for('homee') }}" class="nav-button">Rezarvasiya qaydalari</a> <!-- Sehanegilindi bu -->
         </div>
         <div class="right-nav">
           <a href="{{ url_for('register') }}" class="nav-button secondary">Qeydiyyat</a>
@@ -54,6 +56,7 @@
       <p>Azərbaycan Əmək və Sosial Münasibətlər Akademiyasının Akt Zallarının Rezervasiyası rəsmi Platformasına daxil oldunuz.Sizin üçün yaradılmış bu sistem tədbirlərinizi peşəkar şəkildə planlaşdırmağınıza imkan verir.Tədbiriniz üçün tələb olunan məlumatları əlavə edərək prosesə başlaya bilərsiniz.</p>
     </div>
   </div>
+
 
   <footer class="main-footer">
     <div class="footer-content container">

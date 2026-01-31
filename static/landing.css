@@ -9,13 +9,75 @@
 body {
   background-color: #f4f4f4;
   color: #333;
-  font-size: 20px;
+  font-size: 20px; /* ✅ Buradan dəyişirsən ümumi yazı ölçüsünü */
 }
 
-/* Geriyə qayıt düyməsi */
+
+/* Ortalanmış container */
+.container {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =============================== */
+/* HEADER bölməsi – home.css-ə uyğun */
+/* =============================== */
+
+header {
+  position: relative;
+  z-index: 100;
+  background-color: #F9F9F9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Top bar – loqolar və adlar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: #fff;
+  color: #2c3e50;
+  border-bottom: 0;
+  font-weight: 600;
+  font-size: 1.1rem; /* ✅ Buradan dəyişirsən top bar yazı ölçüsünü */
+}
+
+.left-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.right-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.left-title img{
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* Naviqasiya yerinə sadəcə mavi xətt (yazısız) */
+.header-divider {
+  background-color: #1e3799; /* Home.css-dəki nav bar rəngi */
+  height: 20px; /* Xəttin hündürlüyü */
+  width: 100%;
+}
+
 .back-button {
     position: absolute;
-    top: 90px;   
+    top: 175px;   
     left: 35px;  
     padding: 15px 24px;
     background-color: #335AA2;
@@ -27,57 +89,16 @@ body {
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
+
 .back-button:hover {
     background-color: #0056b3;
 }
 
-/* Ortalanmış container */
-.container {
-  max-width: 1210px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
-/* HEADER */
-header {
-  position: relative;
-  z-index: 100;
-  background-color: #F9F9F9;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+/* =============================== */
+/* MƏZMUN: About və Fakultələr */
+/* =============================== */
 
-/* Top bar */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 20px;
-  background-color: #fff;
-  color: #2c3e50;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.left-title,
-.right-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.logo {
-  height: 60px;
-  width: auto;
-}
-
-/* Sadə mavi xətt */
-.header-divider {
-  background-color: #1e3799;
-  height: 20px;
-  width: 100%;
-}
-
-/* CONTENT */
 section {
   max-width: 900px;
   margin: 40px auto;
@@ -93,30 +114,32 @@ h2 {
 }
 
 #about {
-  margin-top: 1px;
-  padding-top: 14px;
+  margin-top: 1px; /* Bölmənin yuxarıdan aralığı */
+  padding-top: 14px; /* İstəyə görə əlavə boşluq */
 }
 
 #about h2 {
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin-top: 20px; /* Başlığın yuxarı boşluğu */
+  margin-bottom: 15px; /* Başlıq ilə mətn arası məsafə */
 }
 
 #about p {
   margin-top: 10px;
 }
 
+
+
 .faculty, .hall {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   padding: 20px;
 }
 
 .faculty h3, .hall h3 {
   color: #254A84;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 
@@ -140,15 +163,23 @@ img {
   display: block;
 }
 
-/* =============================== */
-/*   FOOTER – Home.css ilə tam eyni */
-/* =============================== */
 
+footer {
+  background-color: #335AA2;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  height: 160px; /* Burada uzunluğu dəyişə bilərsən */
+  width: 1500px; /* Burada eni dəyişə bilərsən, % və ya px istifadə oluna bilər */
+  max-width: 2500px; /* Maksimum eni */
+  margin: 0 auto; /* Mərkəzləşdirmək üçün */
+}
 .main-footer {
   background-color: #1e3799;
   padding: 10px 0;
   color: #fff;
-  width: 99.6vw;     /* tam ekran genişliyi */
+  width: 99.5vw;     /* tam ekran genişliyi */
   margin-left: calc(50% - 50vw); /* mərkəzləşdirilmiş layoutu sıfırlayır */
 }
 
@@ -182,17 +213,41 @@ img {
   min-width: 300px;
 }
 
-/* Əlaqə başlığı */
-.contact-title {
-  text-align: center;
-  margin-bottom: 10px;
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 18px;
+  }
+  section {
+    margin: 20px 10px;
+  }
+  .faculty h3, .hall h3 {
+    font-size: 14px;
+  }
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
-/* İki sütunlu əlaqə nömrələri */
+/* Footer bölməsi */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-left, .footer-right {
+  flex: 1;
+  min-width: 300px;
+}
+
 .contact-columns {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .contact-list {
@@ -202,46 +257,22 @@ img {
 }
 
 .footer-right {
-  flex: 1;
-  min-width: 300px;
   text-align: right;
+  margin-top: 20px;
 }
 
 .footer-right p {
-  margin-top: 24px;
+  margin-top: 25px; /* Dəyəri istəyə görə dəyişə bilər */
 }
 
-/* Aşağı hissə */
 .footer-bottom {
   text-align: center;
   font-size: 14px;
   border-top: 1px solid #ccc;
-  padding-top: 17px;
-}
-.footer-right p {
-  margin-top: 24px; 
+  padding-top: 15px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .top-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .footer-right {
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .contact-columns {
-    flex-direction: column;
-    gap: 10px;
-  }
+.contact-title {
+  text-align: center;
+  margin-bottom: 10px;
 }

@@ -1,4 +1,3 @@
-<h1 style="color:blue">ANA_SEHIFE.HTML TEST</h1>
 <!DOCTYPE html>
 <html lang="az">
 <head>
@@ -15,12 +14,12 @@
   <header>
     <div class="top-bar">
       <div class="left-title">
-        <img src="https://aesma.edu.az/images/aesma-logo.png" alt="AƏSMA Loqosu" class="logo" />
-        <span>Azərbaycan Əmək və Sosial Münasibətlər Akademiyası</span>
+        <img src="{{ url_for('static', filename='images/ahiklogo.png') }}" class="left-logo" />
+        <span>Azərbaycan Həmkarlar İttifaqları Konfederasiyası</span>
       </div>
       <div class="right-title">
-        <span>Azərbaycan Həmkarlar İttifaqları Konfederasiyası</span>
-        <img src="https://kendgidaish.az/assets/images/logoahk.png" alt="AHİK Loqosu" class="logo" />
+        <span>Azərbaycan Əmək və Sosial Münasibətlər Akademiyası</span>
+        <img src="https://aesma.edu.az/images/aesma-logo.png" alt="AƏSMA Loqosu" class="logo" />
       </div>
     </div>
 
@@ -74,22 +73,23 @@ Bu müddəaların əsas məqsədi - rezervasiya prosesinin dəqiq qaydada idarə
       <img src="{{ url_for('static', filename='images/03.03.png') }}"  />
 
 
-        </div>
+    </div>
 
-        <!-- Maliyyə və İqtisad Fakültəsi -->
-        <div class="faculty">
-          <h3>4.İstifadəçi tərəfindən daxil edilən rezervasiya məlumatlarının təsdiqlənməsi və ya ləğv edilməsi yalnız administrator tərəfindən həyata keçirilir. Bu müddət ərzində rezervasiya məlumatları "gözləmə" statusunda administrator panelində saxlanılır. Əgər rezervasiya təsdiqlənərsə və ya ləğv edilərsə, bu barədə istifadəçiyə sistem vasitəsilə bildiriş göndərilir.</h3>
+    <!-- Maliyyə və İqtisad Fakültəsi -->
+    <div class="faculty">
+      <h3>4.İstifadəçi tərəfindən daxil edilən rezervasiya məlumatlarının təsdiqlənməsi və ya ləğv edilməsi yalnız administrator tərəfindən həyata keçirilir. Bu müddət ərzində rezervasiya məlumatları “gözləmə” statusunda administrator panelində saxlanılır. Əgər rezervasiya təsdiqlənərsə və ya ləğv edilərsə, bu barədə istifadəçiyə sistem vasitəsilə bildiriş göndərilir.</h3>
 
-          <img src="{{ url_for('static', filename='images/04.01.png') }}" alt="Administrator panel showing reservation approval interface with pending status indicator and confirmation options" />
-          <img src="{{ url_for('static', filename='images/04.02.png') }}" alt="Administrator dashboard displaying user notification system after reservation approval or cancellation decision" />
-        </div>
+      <img src="{{ url_for('static', filename='images/04.01.png') }}"  />
+      <img src="{{ url_for('static', filename='images/04.02.png') }}"  />
 
-        <!-- Maliyyə və İqtisad Fakültəsi -->
-        <div class="faculty">
-          <h3>5.Hər hansı bir salon üçün eyni tarix və saatda başqa bir istifadəçi tərəfindən rezervasiya sorğusu daxil olarsa, sistem avtomatik olaraq həmin məkanın hazırda dolu olduğu barədə məlumat təqdim edir.</h3>
+    </div>
+
+    <!-- Maliyyə və İqtisad Fakültəsi -->
+    <div class="faculty">
+      <h3>5.Hər hansı bir salon üçün eyni tarix və saatda başqa bir istifadəçi tərəfindən rezervasiya sorğusu daxil olarsa, sistem avtomatik olaraq həmin məkanın hazırda dolu olduğu barədə məlumat təqdim edir.</h3>
 
       <img src="{{ url_for('static', filename='images/0501.png') }}"  />
-        </div>
+    </div>
 
   </section>
 
