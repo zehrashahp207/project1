@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Daxil ol</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylee.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylee.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
- <button class="back-button" onclick="history.back()">Geri Qayıt</button> 
+    <!-- Geri qayıt düyməsi -->
+    <button class="back-button" onclick="history.back()">Geri qayıt</button>
 
     <div class="container">
 
-        <!-- Başlıq -->
         <h2>Daxil ol</h2>
 
-        <!-- Flash mesajlar -->
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             {% for msg in messages %}
@@ -24,7 +23,6 @@
           {% endif %}
         {% endwith %}
 
-        <!-- Login formu -->
         <form method="POST">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Şifrə" required>
@@ -33,12 +31,12 @@
                 <input type="checkbox" name="remember_password"> Şifrəni yadda saxla
             </label>
 
-            <button type="submit">Daxil ol</button>
+            <!-- Daxil ol düyməsi -->
+            <button type="submit" class="login-button">Daxil ol</button>
         </form>
 
-        <!-- Alt linklər -->
         <div class="link">
-            <p> Hesabınız yoxdur? <a href="{{ url_for('register') }}">Qeydiyyatdan keçin</a></p>
+            <p>Hesabınız yoxdur? <a href="{{ url_for('register') }}">Qeydiyyatdan keçin</a></p>
         </div>
     </div>
 

@@ -102,12 +102,9 @@ def dashboard():
 
     users = load_users()
     user = next((u for u in users if u["email"] == session["user"]), None)
-    if not user:
-        flash("İstifadəçi tapılmadı!")
-        return redirect(url_for("login"))
 
-    if session.get("role") == "admin":
-        return redirect(url_for("admin"))
+    if session.pop("just_logged_in", False):
+        flash(f"Xoş gəldiniz, {user['username']}!")
 
     return render_template("dashboard.html", user=user)
 
@@ -141,7 +138,6 @@ def view_reservations():
         deleted_reservations=deleted_reservations
     )
 
-# --- Rezervasiyanın təsdiqi ---
 # --- Rezervasiyanın təsdiqi ---
 @app.route("/admin/reservations/approve/<res_id>", methods=["POST"])
 def approve_reservation(res_id):

@@ -38,9 +38,9 @@ body {
 
 /* ================= Container ================= */
 .container {
-    background: #fff;
-    width: 470px;
-    max-width: 80vw;
+    background: #ffffff;
+    width: 480px;
+    max-width: 85vw;
     border-radius: 30px;
     padding: 10px 52px 40px;
     box-shadow:
@@ -59,18 +59,29 @@ h2 {
     font-size: 3rem;
     text-align: center;
     color: #2c4d9e;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
-/* ================= Flash mesaj ================= */
+/* ================= Flash mesajlar ================= */
 .flash-message {
     border-radius: 14px;
-    padding: 20px;
+    padding: 18px 22px;
     margin-bottom: 25px;
     font-weight: 600;
-    background: #ffe6e6;
+    font-size: 1.05rem;
+    border-left: 8px solid;
+}
+
+.flash-success {
+    background-color: #e6f0ff;
+    color: #1e3a8a;
+    border-color: #3b82f6;
+}
+
+.flash-error {
+    background-color: #ffe6e6;
     color: #991b1b;
-    border-left: 8px solid #ef4444;
+    border-color: #ef4444;
 }
 
 /* ================= Form ================= */
@@ -79,39 +90,58 @@ form {
     flex-direction: column;
 }
 
+/* ================= Inputlar ================= */
+input[type="text"],
 input[type="email"],
 input[type="password"] {
     background: #f0f6ff;
     border: 3px solid #aac8ff;
     border-radius: 25px;
     padding: 16px 20px;
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.15rem;
+    margin-bottom: 26px;
+    color: #0f1a36;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #6b7aaf;
+    font-style: italic;
 }
 
 input:focus {
     outline: none;
     border-color: #3b82f6;
-    background: #fff;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+    background: #ffffff;
 }
 
-/* ================= Daxil ol düyməsi ================= */
-.login-button {
+/* ================= Checkbox ================= */
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1e3a8a;
+}
+
+/* ================= Qeydiyyat düyməsi ================= */
+form button {
     background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
-    font-size: 1.4rem;
-    padding: 19px 0;
+    font-size: 1.3rem;
+    padding: 18px 0;
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    margin-top: 10px;
     box-shadow:
         0 12px 24px rgba(37, 99, 235, 0.6),
         0 6px 12px rgba(14, 60, 200, 0.45);
     transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.25s ease;
 }
 
-.login-button:hover {
+form button:hover {
     background: linear-gradient(135deg, #2563eb, #1e40af);
     box-shadow:
         0 18px 36px rgba(30, 64, 175, 0.7);
@@ -121,19 +151,21 @@ input:focus {
 /* ================= Link ================= */
 .link {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 22px;
+    font-size: 1.05rem;
 }
 
 .link a {
     color: #2563eb;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .link a:hover {
     text-decoration: underline;
 }
 
-/* ================= Mobil ================= */
+/* ================= Mobil uyğunluq ================= */
 @media (max-width: 480px) {
     .container {
         width: 95vw;
@@ -142,5 +174,9 @@ input:focus {
 
     h2 {
         font-size: 2.2rem;
+    }
+
+    input {
+        font-size: 1.05rem;
     }
 }
